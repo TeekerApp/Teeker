@@ -1,3 +1,3 @@
 # Teeker
 
-TODO
+Teeker website using Django.
