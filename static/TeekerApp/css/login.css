@@ -17,3 +17,24 @@
   .content_box .question_acc {
     margin-left: 3%;
     color: white; }
+
+@media screen and (max-width: 430px) {
+  .content_box {
+    margin-left: 30%;
+    padding-top: 15%; }
+    .content_box img {
+      width: 60%;
+      margin-left: 0%; }
+    .content_box .username, .content_box .password {
+      width: 100%;
+      margin-left: -20%; }
+    .content_box .btn {
+      margin-left: 2%;
+      padding-left: 20%;
+      padding-right: 20%; }
+    .content_box .btn:hover {
+      background-color: #00c700;
+      color: black; }
+    .content_box .question_acc {
+      margin-left: -7%;
+      color: white; } }
