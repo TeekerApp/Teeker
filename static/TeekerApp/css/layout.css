@@ -1,0 +1,7 @@
+/* Styling for layout */
+body {
+  background-color: black; }
+
+.background_layout {
+  background-image: linear-gradient(white, black);
+  height: 753px; }
