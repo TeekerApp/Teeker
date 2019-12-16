@@ -36,7 +36,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["http://www.teeker.co"]
+ALLOWED_HOSTS = ["https://www.teeker.co"]
 
 
 # Application definition
