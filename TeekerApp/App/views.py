@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 def index(request):
     """Used for Home page"""
-	
+    html_content = {"message": "G"}
     return render(request, "TeekerApp/index.html", html_content)
 
 def register(request):
@@ -36,7 +36,7 @@ def register(request):
 
         if password != passwordconfirm:
             print("Passwords don't match")
-            return render(request, "TeekerApp/register", {"message": "Passwords don't match!")
+            return render(request, "TeekerApp/register.html", {"message": "Passwords don't match!"})
 
         # Iniatialize variable
         result = {}
@@ -51,7 +51,7 @@ def register(request):
         # If the username does exist send a message
         if result["USERNAME_CHECK"]:
             print("username exists! Please use another one.")
-            return render(request, "TeekerApp/register", {"message": "username exists! Please use another one.")
+            return render(request, "TeekerApp/register.html", {"message": "username exists! Please use another one."})
 
         # Check if the email already exists in the Database
         try:
@@ -63,7 +63,7 @@ def register(request):
         # If the username does exist send a message
         if result["EMAIL_CHECK"]:
             print("email exists! Please use another one.")
-            return render(request, "TeekerApp/register", {"message": "email exists! Please use another one.")
+            return render(request, "TeekerApp/register.html", {"message": "email exists! Please use another one."})
         
         # If the credentials are valid register the user to the Database
         if not result["EMAIL_CHECK"] and not result["USERNAME_CHECK"]:
@@ -74,6 +74,28 @@ def register(request):
                                         password=password)
             f.save()
             print("Success you were registered!")
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("index")), 200
     else:
-        return render(request, "TeekerApp/register")	
+        return render(request, "TeekerApp/register.html"), 200
+
+
+def login_page(request):
+    """ Used for Login Page """
+
+    if request.method == "POST":
+        print("POST on Login")
+
+        username = str(request.POST["username"])
+        pwd = str(request.POST["pwd"])
+
+        user = authenticate(request, username=username, password=pwd)
+
+        if user:
+            login(request, user)
+            return render(request, "TeekerApp/login.html", {"message": "It worked we just haven't finished the App!"})
+        else:
+            return render(request, "TeekerApp/login.html", {"message": "Invalid username/email or password!"})
+
+    logout(request)
+
+    return render(request, "TeekerApp/login.html")
