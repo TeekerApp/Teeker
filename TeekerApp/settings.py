@@ -34,9 +34,9 @@ else:
     SECRET_KEY = '0j@y3$&+pr^py3f4*d+sy*e+k7fj89$7vki52ht8ow-k_vthkn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["http://www.teeker.co"]
 
 
 # Application definition
