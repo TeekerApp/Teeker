@@ -4,4 +4,4 @@ body {
 
 .background_layout {
   background-image: linear-gradient(white, black);
-  height: 753px; }
+  height: 100vh; }
