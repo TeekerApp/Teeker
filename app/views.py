@@ -14,6 +14,9 @@ def index(request):
 def register(request):
     """Used for sign up/register page"""
 
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
+
     # Check if the request is POST
     if request.method == "POST":
 
@@ -74,9 +77,9 @@ def register(request):
                                         password=password)
             f.save()
             print("Success you were registered!")
-        return HttpResponseRedirect(reverse("index")), 200
+        return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "TeekerApp/register.html"), 200
+        return render(request, "TeekerApp/register.html")
 
 
 def login_page(request):

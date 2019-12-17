@@ -1,4 +1,5 @@
 {% extends "TeekerApp/layout.html" %}
+{% load static %} <!-- Loading in all required static files (See settings.py for configurations) -->
 
 {% block title %}
 	Home
@@ -6,7 +7,15 @@
 
 {% block main %}
 	<!-- TODO -->
+	<link href="{% static 'TeekerApp/css/index.css' %}" rel="stylesheet"/>
 
-	<h1>We are coming soon...</h1>
-	<a href="login">login</a>
+	<!-- Custom Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+
+	<div>
+		<img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
+		<h1>We are coming soon...</h1>
+		<a href="login">login</a>
+	</div>
 {% endblock %}

@@ -1,0 +1,21 @@
+/* Styling for Index Page */
+div {
+  padding-top: 3%;
+  padding-left: 20%; }
+  div h1 {
+    font-family: 'Shadows Into Light', cursive; }
+  div a {
+    font-family: 'Exo', sans-serif;
+    color: white;
+    margin-left: 12%; }
+
+@media screen and (max-width: 430px) {
+  div {
+    padding-top: 5%;
+    padding-left: 7%; }
+    div h1 {
+      font-family: 'Shadows Into Light', cursive; }
+    div a {
+      font-family: 'Exo', sans-serif;
+      color: white;
+      margin-left: 30%; } }

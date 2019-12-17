@@ -1,9 +1,27 @@
 {% extends "TeekerApp/layout.html" %}
+{% load static %} <!-- Loading in all required static files (See settings.py for configurations) -->
 
 {% block title %}
-	login
+	Register
 {% endblock %}
 
 {% block main %}
 	<!-- TODO -->
+	<script src="{% static 'TeekerApp/js/register.js' %}"></script>
+	<link href="{% static 'TeekerApp/css/register.css' %}" rel="stylesheet"/>
+
+	<div class="content_box">
+		<img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
+		<br>
+		{{message}}
+		<form action="register" method="POST">
+			<input type="text" name="username" minlength="5" maxlength="15" placeholder="username (min 5, max 15)" class="username form-control"/>
+			<input type="text" name="first_name" minlength="0" maxlength="64" placeholder="First Name" class="first_name form-control"/>
+			<input type="text" name="last_name" minlength="0" maxlength="64" placeholder="Last Name" class="last_name form-control"/>
+			<input type="email" name="email" minlength="0" maxlength="64" placeholder="Email Address" class="email form-control"/>
+			<input type="password" name="pwd" minlength="8" maxlength="" placeholder="username (min 5, max 15)" class="username form-control"/>
+			<input type="text" name="username" minlength="5" maxlength="15" placeholder="username (min 5, max 15)" class="username form-control"/>
+		</form>
+	</div>
+
 {% endblock %}
