@@ -105,6 +105,9 @@ def register(request):
 def login_page(request):
     """ Used for Login Page """
 
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
+
     if request.method == "POST":
         print("POST on Login")
 

@@ -15,9 +15,9 @@
 			{{message}}
 			<form action="/login" method="POST">
 				{% csrf_token %}
-				<input type="text" placeholder="username / email" name="username" class="username form-control"/>
+				<input type="text" placeholder="username / email" name="username" class="username form-control" required/>
 				<br>
-				<input type="password" placeholder="password" name="pwd" class="password form-control"/>
+				<input type="password" placeholder="password" name="pwd" class="password form-control" required/>
 				<br>
 				<button type="submit" class="btn btn-primary">Login</button>
 			</form>
