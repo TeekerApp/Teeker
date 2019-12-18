@@ -43,6 +43,9 @@ def register(request):
             if password != passwordconfirm:
                 print("Passwords don't match")
                 return render(request, "TeekerApp/register.html", {"message": "Passwords don't match!"})
+        else:
+            print("Password too short! Please make it longer then 8 characters and less the 64.")
+            return render(request, "TeekerApp/register.html", {"message": "Password too short! Please make it longer then 8 characters and less the 64."})
 
         # Iniatialize variable
         result = {}
@@ -112,10 +115,24 @@ def login_page(request):
 
         if user:
             login(request, user)
-            return render(request, "TeekerApp/login.html", {"message": "It worked we just haven't finished the App!"})
+            return HttpResponseRedirect(reverse("index"))
         else:
             return render(request, "TeekerApp/login.html", {"message": "Invalid username/email or password!"})
 
-    logout(request)
-
     return render(request, "TeekerApp/login.html")
+	
+def logout_page(request):
+    """ Used for logging out the user """
+    
+    logout(request) # Log out the user from the server
+    
+    return HttpResponseRedirect(reverse("login"))
+    
+
+def account(request):
+    """ Used for account page to display Account information """
+    
+    html_content = {""}
+    
+    return render(request, "TeekerApp/account.html", html_content)
+    

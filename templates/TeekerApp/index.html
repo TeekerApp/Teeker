@@ -7,15 +7,38 @@
 
 {% block main %}
 	<!-- TODO -->
+    <script src="{% static 'TeekerApp/js/index.js' %}"></script>
 	<link href="{% static 'TeekerApp/css/index.css' %}" rel="stylesheet"/>
 
 	<!-- Custom Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+    
+    {% if not request.user.is_staff %}
+        <div>
+            <img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
+            <h1>We are coming soon...</h1>
 
-	<div>
-		<img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
-		<h1>We are coming soon...</h1>
-		<a href="login">login</a>
-	</div>
+            {% if request.user.is_authenticated %}
+                <a href="logout">logout</a>
+            {% else %}
+                <a href="login">login</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <div>
+            <!-- TODO -->
+
+            <div>
+                <img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
+                <h1>Welcome Staff member we are coming soon...</h1>
+    
+                {% if request.user.is_authenticated %}
+                    <a href="logout">logout</a>
+                {% else %}
+                    <a href="login">login</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
