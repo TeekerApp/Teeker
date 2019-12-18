@@ -39,7 +39,7 @@ DEBUG = False
 ALLOWED_HOSTS = ["https://teeker.co"]
 
 
-ADMIN = (
+ADMINS = (
     ("LT.Sana", "snm.developer@gmail.com"),
 )
 
