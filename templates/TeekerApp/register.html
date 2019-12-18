@@ -7,7 +7,7 @@
 
 {% block main %}
 	<!-- TODO -->
-	<script src="{% static 'TeekerApp/js/register.js' %}"></script>
+	<!-- <script src="{% static 'TeekerApp/js/register.js' %}"></script> -->>
 	<link href="{% static 'TeekerApp/css/register.css' %}" rel="stylesheet"/>
 
 	<div>
@@ -16,7 +16,7 @@
 			<img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
 			<br>
 			{{message}}
-			<form action="register" method="POST">
+			<form action="/register" method="POST">
 				{% csrf_token %}
 				<input type="text" name="username" minlength="5" maxlength="15" placeholder="username (min 5, max 15)" class="username form-control" required/>
 				<input type="text" name="first_name" minlength="0" maxlength="64" placeholder="First Name" class="first_name form-control" required/>
