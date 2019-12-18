@@ -29,12 +29,12 @@
       width: 100%;
       margin-left: -20%; }
     .content_box .btn {
-      margin-left: 2%;
+      margin-left: 1%;
       padding-left: 20%;
       padding-right: 20%; }
     .content_box .btn:hover {
       background-color: #00c700;
       color: black; }
     .content_box .question_acc {
-      margin-left: -7%;
+      margin-left: -10%;
       color: white; } }

@@ -28,3 +28,35 @@
 		color: black;
 	}
 }
+
+@media screen and (max-width: 430px) {
+	.content_box {
+		margin-left: 10%;
+		padding-top: 2%;
+	
+		img {
+			width: 40%;
+			margin-left: 24%;
+		}
+	
+		.form-control {
+			width: 90%;
+			margin-bottom: 1%;
+		}
+	
+		small, .form-check-label {
+			color: rgba(255, 255, 255, 0.653);
+		}
+	
+		button {
+			margin-top: 1%;
+			padding-left: 20%;
+			padding-right: 20%;
+			margin-left: 15%;
+		}
+		button:hover {
+			background-color: aqua;
+			color: black;
+		}
+	}
+}
