@@ -1,7 +1,8 @@
 # Teeker App
 
 1. - [x] Login Page
-2. - [ ] Register Page (Sign Up Page)
+2. - [50%] Register Page (Sign Up Page)
+	- The Javascript code for the page hasn't been done.
 3. - [ ] Index Page (Home Page)
 4. - [ ] Account Visitor Page
 5. - [ ] Personal Account Page
