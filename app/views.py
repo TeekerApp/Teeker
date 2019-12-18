@@ -95,8 +95,8 @@ def register(request):
                                         <br>
                                         <small class='text text-muted'>Don't reply to this email.</small>""")
         return HttpResponseRedirect(reverse("index"))
-    else:
-        return render(request, "TeekerApp/register.html")
+
+    return render(request, "TeekerApp/register.html")
 
 
 def login_page(request):
