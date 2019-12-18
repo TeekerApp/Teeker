@@ -39,6 +39,10 @@ DEBUG = False
 ALLOWED_HOSTS = ["https://teeker.co"]
 
 
+ADMIN = (
+    ("LT.Sana", "snm.developer@gmail.com"),
+)
+
 # Application definition
 
 INSTALLED_APPS = [
