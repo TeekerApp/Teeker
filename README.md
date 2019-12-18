@@ -11,4 +11,3 @@
 
 For other Developers please install [Koala App](http://koala-app.com/) to make your `SCSS` files into `CSS` files. Make sure not to have source map files in the css folder
 
-

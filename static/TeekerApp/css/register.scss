@@ -1,2 +1,30 @@
 /* Styling for Register Page */
 
+.content_box {
+	margin-left: 30%;
+	padding-top: 2%;
+
+	img {
+		width: 20%;
+		margin-left: 13%;
+	}
+
+	.form-control {
+		width: 50%;
+		margin-bottom: 1%;
+	}
+
+	small, .form-check-label {
+		color: rgba(255, 255, 255, 0.653);
+	}
+
+	button {
+		margin-top: 1%;
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	button:hover {
+		background-color: aqua;
+		color: black;
+	}
+}

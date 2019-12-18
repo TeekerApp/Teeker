@@ -3,6 +3,10 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.core.files.storage import FileSystemStorage
+from django.core.mail import send_mail
+
+import os
 
 # Create your views here.
 
@@ -14,9 +18,6 @@ def index(request):
 def register(request):
     """Used for sign up/register page"""
 
-    if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("index"))
-
     # Check if the request is POST
     if request.method == "POST":
 
@@ -24,22 +25,24 @@ def register(request):
         username = str(request.POST["username"])
         first_name = str(request.POST["first_name"])
         last_name = str(request.POST["last_name"])
-        e_mail = str(request.POST["e_mail"])
-        password = str(request.POST["password"])
-        passwordconfirm = str(request.POST["passwordconfirm"])
+        e_mail = str(request.POST["email"])
+        password = str(request.POST["pwd"])
+        passwordconfirm = str(request.POST["cpwd"])
 		
         # Used later for phone number authentication to prevent spam accounts
         # The code to save this to the Database will need to be written later
         #phonenumber = str(request.POST["phonenumber"])
 
-        print(username)
-        print(first_name)
-        print(last_name)
-        print(e_mail)
+        # Check if the check box was ticket that says that the user agrees with the Terms and Conditions
+        if not request.POST["check_box"]:
+            print("You didn't agree to the Terms And Conditions!")
+            return render(request, "TeekerApp/register.html", {"message": "You didn't agree to the Terms And Conditions!"})
 
-        if password != passwordconfirm:
-            print("Passwords don't match")
-            return render(request, "TeekerApp/register.html", {"message": "Passwords don't match!"})
+        # Check if the Password matches the requirements
+        if len(password) > 7 and len(password) < 65:
+            if password != passwordconfirm:
+                print("Passwords don't match")
+                return render(request, "TeekerApp/register.html", {"message": "Passwords don't match!"})
 
         # Iniatialize variable
         result = {}
@@ -77,6 +80,20 @@ def register(request):
                                         password=password)
             f.save()
             print("Success you were registered!")
+
+            send_mail("Welcome To Teeker",
+                        """Welcome to Teeker. 
+                            Thank You For Joining our Community, we hope you have fun. 
+                            Don't reply to this email.""",
+                        os.getenv("EMAIL"),
+                        [e_mail],
+                        fail_silently=False,
+                        html_message="""<h2>Welcome To Teeker</h2>
+                                        <br>
+                                        Thank You For Joining our Community, have FUN!
+                                        <br>
+                                        <br>
+                                        <small class='text text-muted'>Don't reply to this email.</small>""")
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "TeekerApp/register.html")

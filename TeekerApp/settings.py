@@ -154,3 +154,8 @@ django_heroku.settings(locals())
 
 # For when connecting to local Database we need to lie we are connected using SSL
 del DATABASES["default"]["OPTIONS"]["sslmode"]
+
+# Email settings
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False # Toggle sandbox mode (when running in DEBUG mode)
