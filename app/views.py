@@ -5,8 +5,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
 from django.core.mail import send_mail
+from django.utils.crypto import get_random_string
 
 import os
+
+# Used to store password recovery urls
+recovery_pwd = {}
+recovery_urls = []
 
 # Create your views here.
 
@@ -108,7 +113,6 @@ def register_validation(request, option):
     if option == "username":   
 
         username = str(request.POST["username"])
-
         try:
             User.objects.get(username=username)
             return JsonResponse({"STATUS": False})
@@ -118,7 +122,6 @@ def register_validation(request, option):
     elif option == "email":
 
         email = str(request.POST["email"])
-
         try:
             User.objects.get(email=email)
             return JsonResponse({"STATUS": False})
@@ -135,7 +138,6 @@ def login_page(request):
         return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
-        print("POST on Login")
 
         username = str(request.POST["username"])
         pwd = str(request.POST["pwd"])
@@ -156,6 +158,71 @@ def logout_page(request):
     logout(request) # Log out the user from the server
     
     return HttpResponseRedirect(reverse("login"))
+
+
+def forgot_pwd(request):
+    """ Used for recovering user password """
+    
+    print(recovery_pwd)
+    print(recovery_urls)
+
+    if request.method == "POST":
+        email = str(request.POST["email"])
+        try:
+            User.objects.get(email=email)
+        except User.DoesNotExist:
+            html_content = {
+                "option": "email",
+                "message": "User with that email address does not exist."
+            }
+            return render(request, "TeekerApp/forgot_pwd.html", html_content)
+
+        f = User.objects.get(email=email)
+
+        while True:
+            r_url = str(get_random_string(length=32))
+
+            if r_url not in recovery_urls:
+                recovery_urls.append(r_url)
+                recovery_pwd[r_url] = email
+                break
+
+        send_mail("Forgot Password",
+                    """Forgot Your password?
+                    Use this link:""",
+                    os.getenv("EMAIL"),
+                    [f.email],
+                    fail_silently=False,
+                    html_message="""<h3>Forgot Your Password?</h3>
+                                    <p>Use this Link to recover your account:</p><a href='"""+str(request.META["HTTP_HOST"])+"/forgot_pwd/"+r_url+"""'>Reset Password</a>
+                                    <br>
+                                    <small class='text text-muted'>Don't reply to this email.</small>""")
+
+    html_content = {
+        "option": "email",
+        "message": ""
+    }
+
+    return render(request, "TeekerApp/forgot_pwd.html", html_content)
+
+
+def forgot_pwd_handler(request, option):
+    """ Used to handle the forgot password URL and password changes """
+
+    print(option)
+    print(recovery_pwd)
+    print(recovery_urls)
+
+    if option in recovery_urls:
+
+        print(recovery_pwd[option])
+
+    html_content = {
+        "option": "pwd",
+        "message": ""
+    }
+
+    return render(request, "TeekerApp/forgot_pwd.html", html_content)
     
 
 def account(request):

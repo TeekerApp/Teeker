@@ -1,0 +1,31 @@
+{% extends "TeekerApp/layout.html" %}
+{% load static %} <!-- Loading in all required static files (See settings.py for configurations) -->
+
+{% block title %}
+	Forgot Password
+{% endblock %}
+
+{% block main %}
+    <!-- TODO -->
+    <!-- This page needs a CSS file -->
+    <div>
+        <div class="content_box">
+            {{message}}
+            {% if option == "email" %}
+                <form action="forgot_pwd" method="POST">
+                    {% csrf_token %}
+                    <input type="email" name="email" class="email form-control" placeholder="Email" required/>
+                    <button type="submit" class="btn btn-primary">Reset</button>
+                </form>
+            {% elif option == "pwd" %}
+                <form action="forgot_pwd/pwd" method="POST">
+                    {% csrf_token %}
+                    <small class="form-text">Password must be 8-64 characters long.<br> Uses of .,@#% is recommended to make your password stronger.</small>
+                    <input type="password" name="pwd" minlength="8" maxlength="64" placeholder="Password" class="pwd form-control" required/>
+                    <input type="password" name="cpwd" minlength="8" maxlength="64" placeholder="Confirm Password" class="cpwd form-control" required/>
+                    <button type="submit" class="btn btn-primary">Reset</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
