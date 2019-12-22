@@ -102,6 +102,32 @@ def register(request):
     return render(request, "TeekerApp/register.html")
 
 
+def register_validation(request, option):
+    """ Used by the Register page Javascript to check if the user has valid credidentionals """
+
+    if option == "username":   
+
+        username = str(request.POST["username"])
+
+        try:
+            User.objects.get(username=username)
+            return JsonResponse({"STATUS": False})
+        except User.DoesNotExist:
+            return JsonResponse({"STATUS": True})
+    
+    elif option == "email":
+
+        email = str(request.POST["email"])
+
+        try:
+            User.objects.get(email=email)
+            return JsonResponse({"STATUS": False})
+        except User.DoesNotExist:
+            return JsonResponse({"STATUS": True})
+
+    return JsonResponse({"STATUS": True})
+
+
 def login_page(request):
     """ Used for Login Page """
 
