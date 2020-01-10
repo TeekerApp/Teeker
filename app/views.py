@@ -226,8 +226,8 @@ def forgot_pwd_handler(request, option):
     """ Used to handle the forgot password URL and password changes """
 
     # Check if the URL in the option variable doesn't exists in the 'recovery_urls' list
-    #if option not in recovery_urls:
-    #    return HttpResponseRedirect(reverse("forgot_pwd")) # Redirect user to the page where they have to put the email address
+    if option not in recovery_urls:
+        return HttpResponseRedirect(reverse("forgot_pwd")) # Redirect user to the page where they have to put the email address
 
     html_content = {
         "option": "pwd",
