@@ -12,6 +12,7 @@
 
 	<div>
 		<div class="content_box">
+
 			<img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
 			<br>
 			{{message}}
@@ -23,15 +24,15 @@
 				<input type="text" name="last_name" minlength="0" maxlength="64" placeholder="Last Name" class="last_name form-control" required/>
 				<small class="form-text">We'll never share your email with anyone else.</small>
 				<input type="email" name="email" minlength="0" maxlength="64" placeholder="Email Address" class="email form-control" required/>
-				<small class="form-text">Password must be 8-64 characters long.<br> Uses of .,@#% is recommended to make your password stronger.</small>
+				<small class="form-text">Password must be 8-64 characters long. Uses of .,@#% is recommended to make your password stronger.</small>
 				<input type="password" name="pwd" minlength="8" maxlength="64" placeholder="Password" class="pwd form-control" required/>
 				<input type="password" name="cpwd" minlength="8" maxlength="64" placeholder="Confirm Password" class="cpwd form-control" required/>
 				<div>
 					<input type="checkbox" class="form-check-input" name="check_box" id="check_box" required/>
 					<label class="form-check-label" for="check_box">Agree to the <a href="#">Terms And Conditions</a> of Teeker</label>
 				</div>
-				<button type="submit" class="btn btn-primary">Sign Up</button>
-				<a href="/login"><button type="button" class="btn btn-warning">Back</button></a>
+				<button type="submit" class="signup-btn btn btn-primary">Sign Up</button>
+				<a href="/login"><button type="button" class="back-btn btn btn-warning">Back</button></a>
 			</form>
 		</div>
 	</div>

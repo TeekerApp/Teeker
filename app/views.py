@@ -10,7 +10,8 @@ from django.utils.crypto import get_random_string
 import os
 
 # Used to store password recovery urls
-recovery_pwd = {}
+recovery_url_email = {}
+recovery_email_url = {}
 recovery_urls = []
 
 # Create your views here.
@@ -40,16 +41,13 @@ def register(request):
 
         # Check if the check box was ticket that says that the user agrees with the Terms and Conditions
         if not request.POST["check_box"]:
-            print("You didn't agree to the Terms And Conditions!")
             return render(request, "TeekerApp/register.html", {"message": "You didn't agree to the Terms And Conditions!"})
 
         # Check if the Password matches the requirements
         if len(password) > 7 and len(password) < 65:
             if password != passwordconfirm:
-                print("Passwords don't match")
                 return render(request, "TeekerApp/register.html", {"message": "Passwords don't match!"})
         else:
-            print("Password too short! Please make it longer then 8 characters and less the 64.")
             return render(request, "TeekerApp/register.html", {"message": "Password too short! Please make it longer then 8 characters and less the 64."})
 
         # Iniatialize variable
@@ -64,7 +62,6 @@ def register(request):
 
         # If the username does exist send a message
         if result["USERNAME_CHECK"]:
-            print("username exists! Please use another one.")
             return render(request, "TeekerApp/register.html", {"message": "username exists! Please use another one."})
 
         # Check if the email already exists in the Database
@@ -76,7 +73,6 @@ def register(request):
         
         # If the username does exist send a message
         if result["EMAIL_CHECK"]:
-            print("email exists! Please use another one.")
             return render(request, "TeekerApp/register.html", {"message": "email exists! Please use another one."})
         
         # If the credentials are valid register the user to the Database
@@ -86,9 +82,9 @@ def register(request):
                                         first_name=first_name,
                                         last_name=last_name,
                                         password=password)
-            f.save()
-            print("Success you were registered!")
-
+            f.save() # Save the new users details to the Database
+            
+            # Send the new user a email
             send_mail("Welcome To Teeker",
                         """Welcome to Teeker. 
                             Thank You For Joining our Community, we hope you have fun. 
@@ -110,8 +106,8 @@ def register(request):
 def register_validation(request, option):
     """ Used by the Register page Javascript to check if the user has valid credidentionals """
 
-    if option == "username":   
-
+    # Check if the username already exists in the Database
+    if option == "username":
         username = str(request.POST["username"])
         try:
             User.objects.get(username=username)
@@ -119,8 +115,8 @@ def register_validation(request, option):
         except User.DoesNotExist:
             return JsonResponse({"STATUS": True})
     
+    # Check if the email address already exists in the Datavase
     elif option == "email":
-
         email = str(request.POST["email"])
         try:
             User.objects.get(email=email)
@@ -134,16 +130,20 @@ def register_validation(request, option):
 def login_page(request):
     """ Used for Login Page """
 
+    # Check if the user if still logged in or not
     if request.user.is_authenticated:
         return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
 
+        # Get the credentials from the input fields
         username = str(request.POST["username"])
         pwd = str(request.POST["pwd"])
 
+        # Check if the credentials are valid
         user = authenticate(request, username=username, password=pwd)
 
+        # Log the user in if the credentials are valied
         if user:
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
@@ -160,13 +160,12 @@ def logout_page(request):
     return HttpResponseRedirect(reverse("login"))
 
 
-def forgot_pwd(request):
+def forgot_pwd(request, html_content=None):
     """ Used for recovering user password """
-    
-    print(recovery_pwd)
-    print(recovery_urls)
 
     if request.method == "POST":
+
+        # Check if the email the user gave exists in the Database
         email = str(request.POST["email"])
         try:
             User.objects.get(email=email)
@@ -177,31 +176,48 @@ def forgot_pwd(request):
             }
             return render(request, "TeekerApp/forgot_pwd.html", html_content)
 
+        # Store the users credentials in f
         f = User.objects.get(email=email)
-
         while True:
+
+            # Get a random string to make the random URL
             r_url = str(get_random_string(length=32))
 
+            # Check if the string doesn't exist in the URL list
             if r_url not in recovery_urls:
-                recovery_urls.append(r_url)
-                recovery_pwd[r_url] = email
-                break
 
-        send_mail("Forgot Password",
-                    """Forgot Your password?
-                    Use this link:""",
-                    os.getenv("EMAIL"),
-                    [f.email],
-                    fail_silently=False,
-                    html_message="""<h3>Forgot Your Password?</h3>
-                                    <p>Use this Link to recover your account:</p><a href='"""+str(request.META["HTTP_HOST"])+"/forgot_pwd/"+r_url+"""'>Reset Password</a>
-                                    <br>
-                                    <small class='text text-muted'>Don't reply to this email.</small>""")
+                # Check if the email address is already waiting
+                try:
+                    if recovery_email_url[email]:
 
-    html_content = {
-        "option": "email",
-        "message": ""
-    }
+                        html_content = {
+                            "option": "email",
+                            "message": "Email already sent. ERx2"
+                        }
+                        return render(request, "TeekerApp/forgot_pwd.html", html_content)
+                except KeyError:
+                    recovery_urls.append(r_url) # Place the random string URL in the list
+                    recovery_email_url[email] = r_url # Place the random string URL in the dictionary with the key being the email address
+                    recovery_url_email[r_url] = email # Place the email address in the dictionary with the key being the random string URL
+
+                    # Send the random string URL to the email address provided by the user
+                    send_mail("Forgot Password",
+                            """Forgot Your password?
+                            Use this link: """+str(request.META["HTTP_HOST"])+"/forgot_pwd/"+r_url,
+                            os.getenv("EMAIL"),
+                            [f.email],
+                            fail_silently=False,
+                            html_message="""<h3>Forgot Your Password?</h3>
+                                            <p>Use this Link to recover your account:</p>"""+str(request.META["HTTP_HOST"])+"/forgot_pwd/"+r_url+"""
+                                            <br>
+                                            <small class='text text-muted'>Don't reply to this email.</small>""")
+                    break # Break the loop
+    
+    if not html_content:
+        html_content = {
+            "option": "email",
+            "message": ""
+        }
 
     return render(request, "TeekerApp/forgot_pwd.html", html_content)
 
@@ -209,20 +225,68 @@ def forgot_pwd(request):
 def forgot_pwd_handler(request, option):
     """ Used to handle the forgot password URL and password changes """
 
-    print(option)
-    print(recovery_pwd)
-    print(recovery_urls)
-
-    if option in recovery_urls:
-
-        print(recovery_pwd[option])
+    # Check if the URL in the option variable doesn't exists in the 'recovery_urls' list
+    #if option not in recovery_urls:
+    #    return HttpResponseRedirect(reverse("forgot_pwd")) # Redirect user to the page where they have to put the email address
 
     html_content = {
         "option": "pwd",
-        "message": ""
+        "url": option
     }
 
     return render(request, "TeekerApp/forgot_pwd.html", html_content)
+
+
+def forgot_pwd_change(request, option):
+    """ Used to update the account password to the new one. """
+
+    if request.method == "POST":
+
+        # Collect all data from input fields
+        url = str(request.POST["ust_url"])
+        pwd = str(request.POST["pwd"])
+        cpwd = str(request.POST["cpwd"])
+
+        # Check if the new password meets requirements
+        if len(pwd) > 7 or len(pwd) < 65 and len(cpwd) > 7 or len(cpwd) < 65:
+
+            # Check if the new password and confirm password match
+            if pwd == cpwd:
+                
+                if url in recovery_urls:
+                    email = recovery_url_email[url] # Get the email address related to the url key
+                    
+                    # Update the users password
+                    f = User.objects.get(email=email)
+                    f.set_password(pwd)
+                    f.save()
+
+                    # Remove the URL and email address from the list and dictionary
+                    try:
+                        recovery_urls.remove(url)
+                        del recovery_email_url[email]
+                        del recovery_url_email[url]
+                    except KeyError:
+                        print("Failed to remove URL and Email address from Recovery Password.")
+
+                    return HttpResponseRedirect(reverse("index")) # Send user to home page
+                else:
+                    html_content = {
+                        "option": "email",
+                        "message": "URL broken!"
+                    }
+            else:
+                html_content = {
+                    "option": "email",
+                    "message": "The passwords don't match!"
+                }
+        else:
+            html_content = {
+                "option": "email",
+                "message": "Your new password does not meet our requirements."
+            }
+
+    return HttpResponseRedirect(reverse("forgot_pwd", args=html_content))
     
 
 def account(request):

@@ -10,11 +10,18 @@
     margin-bottom: 1%; }
   .content_box small, .content_box .form-check-label {
     color: rgba(255, 255, 255, 0.653); }
-  .content_box button {
+  .content_box .signup-btn {
     margin-top: 1%;
     padding-left: 2%;
     padding-right: 2%; }
-  .content_box button:hover {
+  .content_box .signup-btn:hover {
+    background-color: aqua;
+    color: black; }
+  .content_box .back-btn {
+    margin-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%; }
+  .content_box .back-btn:hover {
     background-color: aqua;
     color: black; }
 
@@ -30,11 +37,19 @@
       margin-bottom: 1%; }
     .content_box small, .content_box .form-check-label {
       color: rgba(255, 255, 255, 0.653); }
-    .content_box button {
+    .content_box .signup-btn {
       margin-top: 1%;
       padding-left: 20%;
       padding-right: 20%;
       margin-left: 15%; }
-    .content_box button:hover {
+    .content_box .signup-btn:hover {
+      background-color: aqua;
+      color: black; }
+    .content_box .back-btn {
+      margin-top: 1%;
+      padding-left: 23%;
+      padding-right: 23%;
+      margin-left: 15%; }
+    .content_box .back-btn:hover {
       background-color: aqua;
       color: black; } }

@@ -18,12 +18,22 @@
 		color: rgba(255, 255, 255, 0.653);
 	}
 
-	button {
+	.signup-btn {
 		margin-top: 1%;
 		padding-left: 2%;
 		padding-right: 2%;
 	}
-	button:hover {
+	.signup-btn:hover {
+		background-color: aqua;
+		color: black;
+	}
+
+	.back-btn {
+		margin-top: 1%;
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	.back-btn:hover {
 		background-color: aqua;
 		color: black;
 	}
@@ -48,13 +58,24 @@
 			color: rgba(255, 255, 255, 0.653);
 		}
 	
-		button {
+		.signup-btn {
 			margin-top: 1%;
 			padding-left: 20%;
 			padding-right: 20%;
 			margin-left: 15%;
 		}
-		button:hover {
+		.signup-btn:hover {
+			background-color: aqua;
+			color: black;
+		}
+
+		.back-btn {
+			margin-top: 1%;
+			padding-left: 23%;
+			padding-right: 23%;
+			margin-left: 15%;
+		}
+		.back-btn:hover {
 			background-color: aqua;
 			color: black;
 		}

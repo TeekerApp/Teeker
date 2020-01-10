@@ -27,6 +27,11 @@
 		margin-left: 3%;
 		color: white;
 	}
+
+	.question_pwd {
+		margin-left: 2.5%;
+		color: white;
+	}
 }
 
 @media screen and (max-width: 430px) {
@@ -56,6 +61,11 @@
 	
 		.question_acc {
 			margin-left: -10%;
+			color: white;
+		}
+
+		.question_pwd {
+			margin-left: -12.5%;
 			color: white;
 		}
 	}

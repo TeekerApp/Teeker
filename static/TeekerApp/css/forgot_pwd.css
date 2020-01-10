@@ -1,0 +1,47 @@
+/* Styling for forgot password page */
+.content_box {
+  margin-left: 30%;
+  padding-top: 15%; }
+  .content_box .email {
+    width: 50%; }
+  .content_box .pwd {
+    width: 50%; }
+  .content_box .cpwd {
+    margin-top: 1%;
+    width: 50%; }
+  .content_box .btn_reset {
+    margin-top: 1%;
+    margin-right: 1%; }
+  .content_box .btn_back {
+    margin-top: 1%;
+    margin-right: 1%; }
+  .content_box .btn_upwd {
+    margin-top: 1%;
+    margin-right: 1%; }
+
+@media screen and (max-width: 430px) {
+  .content_box {
+    margin-left: 15%;
+    padding-top: 15%; }
+    .content_box .email {
+      width: 80%; }
+    .content_box .pwd {
+      width: 80%; }
+    .content_box .cpwd {
+      margin-top: 1%;
+      width: 80%; }
+    .content_box .btn_reset {
+      margin-top: 1%;
+      margin-right: 1%;
+      padding-left: 10%;
+      padding-right: 10%; }
+    .content_box .btn_back {
+      margin-top: 1%;
+      margin-right: 1%;
+      padding-left: 7.5%;
+      padding-right: 7.5%; }
+    .content_box .btn_upwd {
+      margin-top: 1%;
+      margin-right: 1%;
+      padding-left: 10%;
+      padding-right: 10%; } }

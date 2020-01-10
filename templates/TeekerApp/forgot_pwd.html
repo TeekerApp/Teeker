@@ -7,23 +7,27 @@
 
 {% block main %}
     <!-- TODO -->
-    <!-- This page needs a CSS file -->
+    <script src="{% static 'TeekerApp/js/forgot_pwd.js' %}"></script>
+    <link href="{% static 'TeekerApp/css/forgot_pwd.css' %}" rel="stylesheet"/>
+
     <div>
         <div class="content_box">
-            {{message}}
             {% if option == "email" %}
                 <form action="forgot_pwd" method="POST">
                     {% csrf_token %}
+                    <p>Please place your email address here.</p>
+                    {{message}}
                     <input type="email" name="email" class="email form-control" placeholder="Email" required/>
-                    <button type="submit" class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn_reset btn-primary">Reset</button><a href="/login"><button type="button" class="btn btn_back btn-warning">Back</button></a>
                 </form>
             {% elif option == "pwd" %}
-                <form action="forgot_pwd/pwd" method="POST">
+                <form action="{{url}}/c" method="POST">
                     {% csrf_token %}
                     <small class="form-text">Password must be 8-64 characters long.<br> Uses of .,@#% is recommended to make your password stronger.</small>
-                    <input type="password" name="pwd" minlength="8" maxlength="64" placeholder="Password" class="pwd form-control" required/>
-                    <input type="password" name="cpwd" minlength="8" maxlength="64" placeholder="Confirm Password" class="cpwd form-control" required/>
-                    <button type="submit" class="btn btn-primary">Reset</button>
+                    <input type="hidden" value="{{url}}" name="ust_url" class="pwd form-control" required/>
+                    <input type="password" name="pwd" minlength="8" maxlength="64" placeholder="Password" id="pwd" class="pwd form-control" required/>
+                    <input type="password" name="cpwd" minlength="8" maxlength="64" placeholder="Confirm Password" id="cpwd" class="cpwd form-control" required/>
+                    <button type="submit" class="btn btn_upwd btn-primary">Update Password</button><a href="/login"><button type="button" class="btn btn_back btn-warning">Back</button></a>
                 </form>
             {% endif %}
         </div>
