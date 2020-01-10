@@ -9,8 +9,8 @@
 6. - [ ] Setting Page
 7. - [ ] Search Result Page
 8. - [ ] User Management Page (For Staff Access only)
-9. - [ ] Recovery Paswword Page [50% Done]
-	- The page needs more work to be done. So far emailing the URL to the user is working.
+9. - [ ] Recovery Password Page [90% Done]
+	- The page works as intended, but need to build a timer to delete the URL after a set time.
 
 For other Developers please install [Koala App](http://koala-app.com/) to make your `SCSS` files into `CSS` files. Make sure not to have source map files in the css folder
 
