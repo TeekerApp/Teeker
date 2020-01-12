@@ -40,7 +40,7 @@ def register(request):
         #phonenumber = str(request.POST["phonenumber"])
 
         # Check if the check box was ticket that says that the user agrees with the Terms and Conditions
-        if not request.POST["check_box"]:
+        if not request.POST["custom_U1133"]:
             return render(request, "TeekerApp/register.html", {"message": "You didn't agree to the Terms And Conditions!"})
 
         # Check if the Password matches the requirements
@@ -192,7 +192,7 @@ def forgot_pwd(request, html_content=None):
 
                         html_content = {
                             "option": "email",
-                            "message": "Email already sent. ERx2"
+                            "message": "Email already sent. If you haven't recieved the email please contact Support. ERx2"
                         }
                         return render(request, "TeekerApp/forgot_pwd.html", html_content)
                 except KeyError:
@@ -212,7 +212,7 @@ def forgot_pwd(request, html_content=None):
                                             <br>
                                             <small class='text text-muted'>Don't reply to this email.</small>""")
                     break # Break the loop
-    
+
     if not html_content:
         html_content = {
             "option": "email",
@@ -234,7 +234,7 @@ def forgot_pwd_handler(request, option):
         "url": option
     }
 
-    return render(request, "TeekerApp/forgot_pwd.html", html_content)
+    return render(request, "TeekerApp/forgot_pwd_2.html", html_content)
 
 
 def forgot_pwd_change(request, option):
@@ -275,18 +275,27 @@ def forgot_pwd_change(request, option):
                         "option": "email",
                         "message": "URL broken!"
                     }
+                    return render(request, "TeekerApp/forgot_pwd.html", html_content)
             else:
                 html_content = {
                     "option": "email",
                     "message": "The passwords don't match!"
                 }
+                return render(request, "TeekerApp/forgot_pwd.html", html_content)
         else:
             html_content = {
                 "option": "email",
                 "message": "Your new password does not meet our requirements."
             }
+            return render(request, "TeekerApp/forgot_pwd.html", html_content)
+    else:
+        html_content = {
+            "option": "email",
+            "message": "Something went wrong."
+        }
+        return render(request, "TeekerApp/forgot_pwd.html", html_content)
 
-    return HttpResponseRedirect(reverse("forgot_pwd", args=html_content))
+    return HttpResponseRedirect(reverse("forgot_pwd"))
     
 
 def account(request):

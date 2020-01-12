@@ -1,44 +1,37 @@
-{% extends "TeekerApp/layout.html" %}
-{% load static %} <!-- Loading in all required static files (See settings.py for configurations) -->
+<!DOCTYPE html>
 
-{% block title %}
-	Home
-{% endblock %}
+{% load static %}
+<html class="nojs html css_verticalspacer" lang="en-GB">
+ <head>
 
-{% block main %}
-	<!-- TODO -->
-    <script src="{% static 'TeekerApp/js/index.js' %}"></script>
-	<link href="{% static 'TeekerApp/css/index.css' %}" rel="stylesheet"/>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta name="generator" content="2018.1.1.386"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Home</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=4138240261' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/index.css?crc=88714960' %}" id="pagesheet"/>
+   </head>
+ <body>
 
-	<!-- Custom Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
-    
-    {% if not request.user.is_staff %}
-        <div>
-            <img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
-            <h1>We are coming soon...</h1>
-
-            {% if request.user.is_authenticated %}
-                <a href="logout">logout</a>
-            {% else %}
-                <a href="login">login</a>
-            {% endif %}
-        </div>
-    {% else %}
-        <div>
-            <!-- TODO -->
-
-            <div>
-                <img src="{% static 'TeekerApp/icon/tk_login_logo.png' %}" />
-                <h1>Welcome Staff member we are coming soon...</h1>
-    
-                {% if request.user.is_authenticated %}
-                    <a href="logout">logout</a>
-                {% else %}
-                    <a href="login">login</a>
-                {% endif %}
-            </div>
-        </div>
-    {% endif %}
-{% endblock %}
+  <div class="clearfix gradient borderbox" id="page"><!-- group -->
+   <div class="clearfix grpelem" id="pu97"><!-- group -->
+    <a class="nonblock nontext MuseLinkActive clip_frame" id="u97" href="/"><!-- image --><img class="block" id="u97_img" src="{% static 'TeekerApp/images/tk_tab_logo.png?crc=472355463' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo_2x.png?crc=467144595' %}" alt="" data-heightwidthratio="1" data-image-width="60" data-image-height="60"/></a>
+    <img id="u291-4" alt="FeedBack" width="415" height="20" src="{% static 'TeekerApp/images/u291-4.png?crc=3884898126' %}" data-hidpi-src="{% static 'TeekerApp/images/u291-4_2x.png?crc=4116191623' %}"/><!-- rasterized frame -->
+   </div>
+   <div class="clearfix grpelem" id="pu1280-4"><!-- column -->
+    <img class="colelem" id="u1280-4" alt="We are coming soon..." src="{% static 'TeekerApp/images/u1280-4.png?crc=3878136278' %}" data-hidpi-src="{% static 'TeekerApp/images/u1280-4_2x.png?crc=4029149490' %}" data-image-width="658"/><!-- rasterized frame -->
+    <div class="clearfix colelem" id="u1283-5" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter"><!-- content -->
+      {% if request.user.is_authenticated %}
+        <p id="u1283-3"><a class="nonblock" href="logout"><span id="u1283">Logout</span></a></p>
+      {% else %}
+        <p id="u1283-3"><a class="nonblock" href="login"><span id="u1283">Login</span></a></p>
+      {% endif %}
+    </div>
+   </div>
+   <div class="verticalspacer" data-offset-top="415" data-content-above-spacer="414" data-content-below-spacer="205" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+  </div>
+  </body>
+</html>
