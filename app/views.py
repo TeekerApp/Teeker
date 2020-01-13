@@ -40,7 +40,9 @@ def register(request):
         #phonenumber = str(request.POST["phonenumber"])
 
         # Check if the check box was ticket that says that the user agrees with the Terms and Conditions
-        if not request.POST["custom_U1133"]:
+        try:
+            request.POST["custom_U1133"]
+        except KeyError:
             return render(request, "TeekerApp/register.html", {"message": "You didn't agree to the Terms And Conditions!"})
 
         # Check if the Password matches the requirements
