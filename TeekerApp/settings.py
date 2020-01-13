@@ -157,3 +157,6 @@ del DATABASES["default"]["OPTIONS"]["sslmode"]
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY") # Find the Key in the Heroku App or go to www.sendgrid.com and get one.
 SENDGRID_SANDBOX_MODE_IN_DEBUG=False # Toggle sandbox mode (when running in DEBUG mode)
+
+# Used for reCAPTCHA verification
+RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")

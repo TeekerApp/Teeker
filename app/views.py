@@ -6,8 +6,10 @@ from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
+from django.conf import settings
 
 import os
+import requests
 
 # Used to store password recovery urls
 recovery_url_email = {}
@@ -20,6 +22,15 @@ def index(request):
     """Used for Home page"""
     html_content = {"message": "G"}
     return render(request, "TeekerApp/index.html", html_content)
+
+def get_client_ip(request):
+    """ Used in register for reCAPTCHA verification. This gets the users Public IP address """
+    x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(",")[0]
+    else:
+        ip = request.META.get("REMOTE_ADDR")
+    return ip
 
 def register(request):
     """Used for sign up/register page"""
@@ -45,9 +56,22 @@ def register(request):
         except KeyError:
             return render(request, "TeekerApp/register.html", {"message": "You didn't agree to the Terms And Conditions!"})
 
+        # Check if the reCAPTCHA was successful (reCAPTCHA v2.0)
         try:
             if not request.POST["g-recaptcha-response"]:
                 return render(request, "TeekerApp/register.html", {"message": "Failed to check reCAPTCHA."})
+            else:
+                captcha_rs = request.POST["g-recaptcha-response"]
+                url = "https://www.google.com/recaptcha/api/siteverify"
+                params = {
+                    "secret": settings.RECAPTCHA_SECRET_KEY,
+                    "response": captcha_rs,
+                    "remoteip": get_client_ip(request)
+                }
+                verify_rs = requests.get(url, params=params, verify=True)
+                verify_rs = verify_rs.json()
+                if not verify_rs["success"]:
+                    return render(request, "TeekerApp/register.html", {"message": "reCAPTCHA not valid. Try again in 1 minute."})
         except KeyError:
             return render(request, "TeekerApp/register.html", {"message": "Failed to check reCAPTCHA."})
 
@@ -255,8 +279,30 @@ def forgot_pwd_change(request, option):
         pwd = str(request.POST["pwd"])
         cpwd = str(request.POST["cpwd"])
 
+        # Check if the reCAPTCHA was successful (reCAPTCHA v2.0)
         try:
-            request.POST["g-recaptcha-response"]
+            if not request.POST["g-recaptcha-response"]:
+                html_content = {
+                    "option": "email",
+                    "message": "Failed to check reCAPTCHA."
+                }
+                return render(request, "TeekerApp/forgot_pwd.html", html_content)
+            else:
+                captcha_rs = request.POST["g-recaptcha-response"]
+                url = "https://www.google.com/recaptcha/api/siteverify"
+                params = {
+                    "secret": settings.RECAPTCHA_SECRET_KEY,
+                    "response": captcha_rs,
+                    "remoteip": get_client_ip(request)
+                }
+                verify_rs = requests.get(url, params=params, verify=True)
+                verify_rs = verify_rs.json()
+                if not verify_rs["success"]:
+                    html_content = {
+                        "option": "email",
+                        "message": "reCAPTCHA not valid. Try again in 1 minute."
+                    }
+                    return render(request, "TeekerApp/forgot_pwd.html", html_content)
         except KeyError:
             html_content = {
                 "option": "email",
