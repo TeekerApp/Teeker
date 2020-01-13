@@ -46,7 +46,8 @@ def register(request):
             return render(request, "TeekerApp/register.html", {"message": "You didn't agree to the Terms And Conditions!"})
 
         try:
-            request.POST["g-recaptcha-response"]
+            if not request.POST["g-recaptcha-response"]:
+                return KeyError
         except KeyError:
             return render(request, "TeekerApp/register.html", {"message": "Failed to check reCAPTCHA."})
 
@@ -253,6 +254,15 @@ def forgot_pwd_change(request, option):
         url = str(request.POST["ust_url"])
         pwd = str(request.POST["pwd"])
         cpwd = str(request.POST["cpwd"])
+
+        try:
+            request.POST["g-recaptcha-response"]
+        except KeyError:
+            html_content = {
+                "option": "email",
+                "message": "Failed to check reCAPTCHA."
+            }
+            return render(request, "TeekerApp/forgot_pwd.html", html_content)
 
         # Check if the new password meets requirements
         if len(pwd) > 7 or len(pwd) < 65 and len(cpwd) > 7 or len(cpwd) < 65:
