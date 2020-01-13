@@ -47,7 +47,7 @@ def register(request):
 
         try:
             if not request.POST["g-recaptcha-response"]:
-                return KeyError
+                return render(request, "TeekerApp/register.html", {"message": "Failed to check reCAPTCHA."})
         except KeyError:
             return render(request, "TeekerApp/register.html", {"message": "Failed to check reCAPTCHA."})
 
