@@ -45,6 +45,11 @@ def register(request):
         except KeyError:
             return render(request, "TeekerApp/register.html", {"message": "You didn't agree to the Terms And Conditions!"})
 
+        try:
+            request.POST["g-recaptcha-response"]
+        except KeyError:
+            return render(request, "TeekerApp/register.html", {"message": "Failed to check reCAPTCHA."})
+
         # Check if the Password matches the requirements
         if len(password) > 7 and len(password) < 65:
             if password != passwordconfirm:
