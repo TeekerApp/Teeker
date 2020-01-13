@@ -32,7 +32,9 @@
     <img id="u291-4" alt="FeedBack" width="415" height="20" src="{% static 'TeekerApp/images/u291-4.png?crc=3884898126' %}" data-hidpi-src="{% static 'TeekerApp/images/u291-4_2x.png?crc=4116191623' %}"/><!-- rasterized frame -->
    </div>
    <form class="form-grp clearfix grpelem" id="widgetu664" method="post" enctype="multipart/form-data" action="register" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter"><!-- none box -->
-    <div class="position_content" id="widgetu664_position_content">
+    {% csrf_token %}
+    {{message}}
+      <div class="position_content" id="widgetu664_position_content">
      <div class="fld-grp clearfix colelem" id="widgetu1061" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
       <label class="fld-label actAsDiv clearfix colelem" id="u1064-4" for="widgetu1061_input"><!-- content --><span class="actAsPara"><span id="u1064">Username must be 5-15 characters long.</span></span></label>
       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem" id="u1062-4"><!-- content --><div id="u1062-3"><input type="text" class="wrapped-input username" id="widgetu1061_input" name="username" placeholder="Username" tabindex="1"></input><label class="wrapped-input fld-prompt" id="widgetu1061_prompt" for="widgetu1061_input"><span class="actAsPara"></span></label></div></span>
