@@ -66,7 +66,9 @@ def register(request):
                 params = {
                     "secret": settings.RECAPTCHA_SECRET_KEY,
                     "response": captcha_rs,
-                    "remoteip": get_client_ip(request)
+                    "remoteip": get_client_ip(request),
+                    "success": True|False,
+                    "hostname": settings.ALLOWED_HOSTS
                 }
                 verify_rs = requests.get(url, params=params, verify=True)
                 verify_rs = verify_rs.json()
@@ -289,13 +291,13 @@ def forgot_pwd_change(request, option):
                 return render(request, "TeekerApp/forgot_pwd.html", html_content)
             else:
                 captcha_rs = request.POST["g-recaptcha-response"]
-                url = "https://www.google.com/recaptcha/api/siteverify"
+                url_recaptcha = "https://www.google.com/recaptcha/api/siteverify"
                 params = {
                     "secret": settings.RECAPTCHA_SECRET_KEY,
                     "response": captcha_rs,
                     "remoteip": get_client_ip(request)
                 }
-                verify_rs = requests.get(url, params=params, verify=True)
+                verify_rs = requests.get(url_recaptcha, params=params, verify=True)
                 verify_rs = verify_rs.json()
                 if not verify_rs["success"]:
                     html_content = {

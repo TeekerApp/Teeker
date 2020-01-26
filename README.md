@@ -14,4 +14,12 @@
 
 For other Developers please install [Koala App](http://koala-app.com/) to make your `SCSS` files into `CSS` files. Make sure not to have source map files in the css folder
 
+Need to use the Python version in `runtime.txt`.
+
 Now using Adobe Muse to do the Front-End.
+
+# ERROR's
+
+If a Database Error shows up about `OPTIONS` make these files.
+1. `.env` place this inside `DATABASE_URL=sqlite:///db.sqlite3`
+2. `.gitignore` place this inside `.env`

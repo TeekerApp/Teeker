@@ -31,7 +31,7 @@ if os.path.isfile(dotenv_file):
 if os.getenv("SECRET_KEY"):
     SECRET_KEY = os.getenv("SECRET_KEY")
 else:
-    SECRET_KEY = '0j@y3$&+pr^py3f4*d+sy*e+k7fj89$7vki52ht8ow-k_vthkn'
+    SECRET_KEY = 'egEfu,zCifp83GiK_PJ2II6iu}]h5gRZI1[P,sOi|InZI~{z84(W;bU,1j8"&$@tw?!C#uB\'763K?1|Hfkq4-_,3$:.XVj@")h779abB(1uI'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -41,6 +41,7 @@ ALLOWED_HOSTS = ["https://teeker.co"]
 
 ADMINS = (
     ("LT.Sana", "snm.developer@gmail.com"),
+    ("Matt__", "matthatesgooogle@gmail.com")
 )
 
 # Application definition

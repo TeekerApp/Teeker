@@ -11,3 +11,5 @@ class Content(models.Model):
 	image_1 = models.ImageField(upload_to="uploaded_img/", help_text="Content Image 1")
 	image_2 = models.ImageField(upload_to="uploaded_img/", help_text="Content Image 2")
 	image_3 = models.ImageField(upload_to="uploaded_img/", help_text="Content Image 3")
+	tags = models.TextField(max_length=1200)
+	category = models.CharField(max_length=500)
