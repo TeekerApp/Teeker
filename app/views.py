@@ -21,7 +21,12 @@ recovery_urls = []
 def index(request):
     """Used for Home page"""
     html_content = {"message": "G"}
-    return render(request, "TeekerApp/index.html", html_content)
+
+    if request.user.is_staff:
+        return render(request, "TeekerApp/index.html", html_content)
+    else:
+        return render(request, "TeekerApp/not_staff.html", html_content)
+
 
 def get_client_ip(request):
     """ Used in register for reCAPTCHA verification. This gets the users Public IP address """
@@ -366,7 +371,55 @@ def forgot_pwd_change(request, option):
 def account(request):
     """ Used for account page to display Account information """
     
-    html_content = {""}
+    html_content = {"":""}
     
     return render(request, "TeekerApp/account.html", html_content)
+
+
+def feedback(request):
+    """ Used for giving feedback. Mostly looking for bug issue reports. """
+
+    html_content = {"":""}
+
+    return render(request, "TeekerApp/feedback.html", html_content)
+
+
+def settings_page(request):
+    """ Used to show the users account settings and allow them to modify them. """
+
+    html_content = {"":""}
+
+    return render(request, "TeekerApp/settings.html", html_content)
+
+
+def inbox(request):
+    """ Shows the messages the user has recieved from other users. A little communication page. """
+
+    html_content = {"":""}
+
+    return render(request, "TeekerApp/inbox.html", html_content)
+
+
+def subscriptions(request):
+    """ Shows the content of the user's the user is following. """
+
+    html_content = {"":""}
+
+    return render(request, "TeekerApp/subscriptions.html", html_content)
+
+
+def upload_post(request):
+    """ Used to upload the users content to our database and server. """
+
+    html_content = {"":""}
+
+    return render(request, "TeekerApp/upload_post.html", html_content)
+
+
+def visitor_account_view(request):
+    """ Displays the profile of other users in a different way compared to when you own the account. """
+
+    html_content = {"":""}
+
+    return render(request, "TeekerApp/visitor_account_view.html", html_content)
     
