@@ -40,6 +40,10 @@ def get_client_ip(request):
 def register(request):
     """Used for sign up/register page"""
 
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
+
     # Check if the request is POST
     if request.method == "POST":
 
@@ -202,6 +206,10 @@ def logout_page(request):
 def forgot_pwd(request, html_content=None):
     """ Used for recovering user password """
 
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
+
     if request.method == "POST":
 
         # Check if the email the user gave exists in the Database
@@ -264,6 +272,10 @@ def forgot_pwd(request, html_content=None):
 def forgot_pwd_handler(request, option):
     """ Used to handle the forgot password URL and password changes """
 
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
+
     # Check if the URL in the option variable doesn't exists in the 'recovery_urls' list
     if option not in recovery_urls:
         return HttpResponseRedirect(reverse("forgot_pwd")) # Redirect user to the page where they have to put the email address
@@ -278,6 +290,10 @@ def forgot_pwd_handler(request, option):
 
 def forgot_pwd_change(request, option):
     """ Used to update the account password to the new one. """
+
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
 
