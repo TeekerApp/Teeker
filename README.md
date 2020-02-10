@@ -22,6 +22,10 @@ Now using Adobe Muse to do the Front-End.
 
 # ERROR's
 
+## Database ERROR's
 If a Database Error shows up about `OPTIONS` make these files.
 1. `.env` place this inside `DATABASE_URL=sqlite:///db.sqlite3`
 2. `.gitignore` place this inside `.env`
+
+## Enviroment ERROR's
+If you are having any issues when trying to run a test that involves sending emails or reCAPTCHA v2. Please make sure that you have all enviroment values, if you don't get them from Sana or go to the Heroku Settings.
