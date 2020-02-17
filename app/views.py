@@ -555,4 +555,16 @@ def visitor_account_view(request):
         return render(request, "TeekerApp/not_staff.html", html_content)
 
     return render(request, "TeekerApp/visitor_account_view.html", html_content)
+
+
+def search_bar(request):
+    """ Displays the profile of other users in a different way compared to when you own the account. """
+
+    html_content = {"":""}
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html", html_content)
+
+    return HttpResponseRedirect(reverse("index"))
     
