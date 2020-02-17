@@ -446,7 +446,27 @@ def feedback(request):
                 feedback_content(owner=int(request.user.pk),
                                  subject=subject_v,
                                  feedback=message_v).save()
-                html_content = {"success_message": "FeedBack has been Received and will be viewed soon! Thank You."}
+                
+                # Get all FeedBack Data
+                p_feedback = feedback_content.objects.all()
+                if p_feedback:
+                    feedback_html_c = []
+                    for i in p_feedback:
+                        p_user = User.objects.get(pk=int(i.owner))
+                        feedback_html_c.append({
+                            "username": p_user.username,
+                            "subject": i.subject,
+                            "feedback_message": i.feedback,
+                            "date": i.date
+                            })
+
+                    html_content = {
+                        "feedback_html": feedback_html_c,
+                        "success_message": "FeedBack has been Received and will be viewed soon! Thank You."
+                        }
+                else:
+                    html_content = {"success_message": "FeedBack has been Received and will be viewed soon! Thank You."}
+
                 return render(request, "TeekerApp/feedback.html", html_content)
             else:
                 html_content = {"alert_message": "FeedBack Message missing!"}
