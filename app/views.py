@@ -486,7 +486,20 @@ def settings_page(request):
     if not request.user.is_staff:
         return render(request, "TeekerApp/not_staff.html")
 
-    f = account_settings.objects.get(owner=int(request.user.pk))
+    try:
+        f = account_settings.objects.get(owner=int(request.user.pk))
+    except ValueError:
+        html_content = {
+            "news_letter": False,
+            "inbox_notifications": False,
+            "browser_notifications": False
+        }
+
+        # I don't know if this should be here or not (This might be removed in the future)
+        account_settings(owner=int(request.user.pk),
+                        news_letter=False # For now the News letter option will stay Disabled till futher notice
+                        ).save()
+
     if f:
         html_content = {
             "news_letter": f.news_letter,
