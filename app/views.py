@@ -12,7 +12,7 @@ import os
 import requests
 
 # Get custom models
-from .models import feedback_content, account_settings
+from .models import feedback_content, account_setting
 
 # Used to store password recovery urls
 recovery_url_email = {}
@@ -130,7 +130,7 @@ def register(request):
                                         password=password)
             f.save() # Save the new users details to the Database
 
-            account_settings(owner=int(request.user.pk),
+            account_setting(owner=int(request.user.pk),
                             news_letter=False # For now the News letter option will stay Disabled till futher notice
                             ).save()
             
@@ -487,7 +487,7 @@ def settings_page(request):
         return render(request, "TeekerApp/not_staff.html")
 
     try:
-        f = account_settings.objects.get(owner=int(request.user.pk))
+        f = account_setting.objects.get(owner=int(request.user.pk))
     except ValueError:
         html_content = {
             "news_letter": False,

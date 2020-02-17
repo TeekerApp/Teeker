@@ -18,7 +18,7 @@ class Content(models.Model):
 	def __str__(self):
 		return f"Owner: {self.owner} Title: {self.title} Description: {self.description} URL Path: {self.url_path} Amount of Rates: {self.amount_rating} Image 1: {self.image_1} Image 2: {self.image_2} Image 3: {self.image_3} Tags: {self.tags} Categories: {self.category}"
 
-class account_settings(models.Model):
+class account_setting(models.Model):
 	""" These are the settings for each account. """
 	owner = models.BigIntegerField(unique=True, null=False)
 	news_letter = models.BooleanField(default=False, null=False)
