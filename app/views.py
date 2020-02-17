@@ -488,6 +488,12 @@ def settings_page(request):
 
     try:
         f = account_settings.objects.get(owner=int(request.user.pk))
+        if f:
+            html_content = {
+                "news_letter": f.news_letter,
+                "inbox_notifications": f.inbox_notifications,
+                "browser_notifications": f.browser_notifications
+            }
     except account_settings.DoesNotExist:
         html_content = {
             "news_letter": False,
@@ -499,13 +505,6 @@ def settings_page(request):
         account_settings(owner=int(request.user.pk),
                             news_letter=False # For now the News letter option will stay Disabled till futher notice
                             ).save()
-
-    if f:
-        html_content = {
-            "news_letter": f.news_letter,
-            "inbox_notifications": f.inbox_notifications,
-            "browser_notifications": f.browser_notifications
-        }
 
     return render(request, "TeekerApp/settings.html", html_content)
 
