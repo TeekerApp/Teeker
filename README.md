@@ -28,4 +28,4 @@ If a Database Error shows up about `OPTIONS` make these files.
 2. `.gitignore` place this inside `.env`
 
 ## Enviroment ERROR's
-If you are having any issues when trying to run a test that involves sending emails or reCAPTCHA v2. Please make sure that you have all enviroment values, if you don't get them from Sana or go to the Heroku Settings.
+If you are having any issues when trying to run a test that involves sending emails or reCAPTCHA v2. Please make sure that you have all enviroment values. If you don't, get them from Sana or go to the Heroku Settings.
