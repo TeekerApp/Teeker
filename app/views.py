@@ -23,7 +23,9 @@ recovery_urls = []
 
 def index(request):
     """Used for Home page"""
-    html_content = {"message": "G"}
+    html_content = {"message": "G",
+                    "title": "My Morning Vibes",
+                    "average_rating": 8}
 
     if request.user.is_staff:
         return render(request, "TeekerApp/index.html", html_content)
