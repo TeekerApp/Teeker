@@ -268,7 +268,7 @@ def forgot_pwd(request, html_content=None):
                     break # Break the loop
         html_content = {
                 "option": "email",
-                "message": "Check your inbox now. (If you can't find it check the spam mail)"
+                "success_message": "Check your inbox now. (If you can't find it check the spam mail)"
             }
         return render(request, "TeekerApp/forgot_pwd.html", html_content)
 

@@ -18,12 +18,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>Inbox</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=3858795379' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/inbox.css?crc=3964499809' %}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=4153465552' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/inbox.css?crc=85297477' %}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=23281128' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_inbox.css?crc=410209602' %}" id="nomq_pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_inbox.css?crc=4022253864' %}" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -32,11 +32,17 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <!-- JS includes -->
   <script src="https://webfonts.creativecloud.com/source-sans-pro:n4:default.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
-  <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
+  <script src="{% static 'TeekerApp/scripts/html5shiv.js?crc=4241844378' %}" type="text/javascript"></script>
   <![endif]-->
     
 <!-- Tiny logo icon in tab -->
 	<link href="{% static 'TeekerApp/icon/tk_tab_logo.png' %}" rel="shortcut icon"/>
+<style>
+.mobile_box_black_background {
+min-height: 100vh !important;
+height: 100vh !important;
+}
+</style>
  </head>
  <body>
 
@@ -110,8 +116,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
    </div>
   </div>
-  <div class="breakpoint" id="bp_480" data-min-width="321" data-max-width="480"><!-- responsive breakpoint node -->
+  <div class="breakpoint" id="bp_480" data-min-width="381" data-max-width="480"><!-- responsive breakpoint node -->
    <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
+    <div class="mobile_box_black_background shared_content" id="u25506" data-content-guid="u25506_content"><!-- simple frame -->
+     <div class="fluid_height_spacer"></div>
+    </div>
     <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo51x51.png?crc=4043144717' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo51x51_2x.png?crc=254128234' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="50" data-image-height="50" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     <div class="browser_width shared_content" id="u15910-bw" data-content-guid="u15910-bw_content">
@@ -120,60 +129,71 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div id="u15911-wrapper">
      <div class="clearfix" id="u15911"><!-- group -->
       <div id="u15914-wrapper">
-       <a class="nonblock nontext clip_frame" id="u15914" href="\"><!-- image --><img class="block temp_no_img_src" id="u15914_img" data-orig-src="{% static 'TeekerApp/images/house36x36.png?crc=3898012887' %}" data-hidpi-src="{% static 'TeekerApp/images/house36x36_2x.png?crc=447038563' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+       <a class="nonblock nontext clip_frame" id="u15914" href="\"><!-- image --><img class="block temp_no_img_src" id="u15914_img" data-orig-src="{% static 'TeekerApp/images/house36x36.png?crc=3852056661' %}" data-hidpi-src="{% static 'TeekerApp/images/house36x36_2x.png?crc=4020967412' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
       </div>
       <div id="u15912-wrapper">
        <div class="clip_frame" id="u15912"><!-- image -->
-        <img class="block temp_no_img_src" id="u15912_img" data-orig-src="{% static 'TeekerApp/images/hand36x36.png?crc=4127529013' %}" data-hidpi-src="{% static 'TeekerApp/images/hand36x36_2x.png?crc=135967250' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
+        <img class="block temp_no_img_src" id="u15912_img" data-orig-src="{% static 'TeekerApp/images/hand36x36.png?crc=315676512' %}" data-hidpi-src="{% static 'TeekerApp/images/hand36x36_2x.png?crc=522385712' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
        </div>
       </div>
       <div id="u15918-wrapper">
-       <a class="nonblock nontext clip_frame" id="u15918" href="upload_post"><!-- image --><img class="block temp_no_img_src" id="u15918_img" data-orig-src="{% static 'TeekerApp/images/upload36x36.png?crc=4037571144' %}" data-hidpi-src="{% static 'TeekerApp/images/upload36x36_2x.png?crc=4231279383' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+       <a class="nonblock nontext clip_frame" id="u15918" href="upload_post"><!-- image --><img class="block temp_no_img_src" id="u15918_img" data-orig-src="{% static 'TeekerApp/images/upload36x36.png?crc=3826685723' %}" data-hidpi-src="{% static 'TeekerApp/images/upload36x36_2x.png?crc=3929820766' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
       </div>
       <div id="u15922-wrapper">
        <a class="nonblock nontext clip_frame" id="u15922" href="subscriptions"><!-- image --><img class="block temp_no_img_src" id="u15922_img" data-orig-src="{% static 'TeekerApp/images/star36x36.png?crc=3899252303' %}" data-hidpi-src="{% static 'TeekerApp/images/star36x36_2x.png?crc=443378921' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
       </div>
       <div id="u15920-wrapper">
-       <a class="nonblock nontext MuseLinkActive clip_frame" id="u15920" href="inbox"><!-- image --><img class="block temp_no_img_src" id="u15920_img" data-orig-src="{% static 'TeekerApp/images/mail36x36.png?crc=4205634203' %}" data-hidpi-src="{% static 'TeekerApp/images/mail36x36_2x.png?crc=3790302476' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+       <a class="nonblock nontext MuseLinkActive clip_frame" id="u15920" href="inbox"><!-- image --><img class="block temp_no_img_src" id="u15920_img" data-orig-src="{% static 'TeekerApp/images/mail36x36.png?crc=4157290308' %}" data-hidpi-src="{% static 'TeekerApp/images/mail36x36_2x.png?crc=304171847' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
       </div>
       <div id="u15916-wrapper">
-       <a class="nonblock nontext clip_frame" id="u15916" href="settings"><!-- image --><img class="block temp_no_img_src" id="u15916_img" data-orig-src="{% static 'TeekerApp/images/gear36x36.png?crc=4104447608' %}" data-hidpi-src="{% static 'TeekerApp/images/gear36x36_2x.png?crc=4187537529' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+       <a class="nonblock nontext clip_frame" id="u15916" href="settings"><!-- image --><img class="block temp_no_img_src" id="u15916_img" data-orig-src="{% static 'TeekerApp/images/gear36x36.png?crc=3996571357' %}" data-hidpi-src="{% static 'TeekerApp/images/gear36x36_2x.png?crc=240248372' %}" alt="" data-heightwidthratio="1" data-image-width="35" data-image-height="35" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
       </div>
      </div>
     </div>
-    <div class="verticalspacer shared_content" data-offset-top="0" data-content-above-spacer="0" data-content-below-spacer="438" data-sizePolicy="fixed" data-pintopage="page_fixedLeft" data-content-guid="page_4_content"></div>
+    <div class="verticalspacer shared_content" data-offset-top="0" data-content-above-spacer="0" data-content-below-spacer="438" data-sizePolicy="fixed" data-pintopage="page_fixedLeft" data-content-guid="page_5_content"></div>
+   </div>
+  </div>
+  <div class="breakpoint" id="bp_380" data-min-width="321" data-max-width="380"><!-- responsive breakpoint node -->
+   <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
+    <span class="mobile_box_black_background placeholder" data-placeholder-for="u25506_content"><!-- placeholder node --></span>
+    <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo40x40.png?crc=4054165183' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo40x40_2x.png?crc=4183110726' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="40" data-image-height="40" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+    <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
+    <span class="browser_width placeholder" data-placeholder-for="u15910-bw_content"><!-- placeholder node --></span>
+    <div class="temp_no_id shared_content" data-orig-id="u15911-wrapper" data-content-guid="u15911-wrapper_content">
+     <div class="clearfix temp_no_id" data-orig-id="u15911"><!-- group -->
+      <div class="temp_no_id" data-orig-id="u15914-wrapper">
+       <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u15914"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/house28x28.png?crc=66175008' %}" data-hidpi-src="{% static 'TeekerApp/images/house28x28_2x.png?crc=4032909' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15914_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+      </div>
+      <div class="temp_no_id" data-orig-id="u15912-wrapper">
+       <div class="clip_frame temp_no_id" data-orig-id="u15912"><!-- image -->
+        <img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/hand28x28.png?crc=311739249' %}" data-hidpi-src="{% static 'TeekerApp/images/hand28x28_2x.png?crc=92964602' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15912_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
+       </div>
+      </div>
+      <div class="temp_no_id" data-orig-id="u15918-wrapper">
+       <a class="nonblock nontext clip_frame temp_no_id" href="upload_post" data-orig-id="u15918"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/upload28x28.png?crc=170609632' %}" data-hidpi-src="{% static 'TeekerApp/images/upload28x28_2x.png?crc=217475412' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15918_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+      </div>
+      <div class="temp_no_id" data-orig-id="u15922-wrapper">
+       <a class="nonblock nontext clip_frame temp_no_id" href="subscriptions" data-orig-id="u15922"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/star28x28.png?crc=343936934' %}" data-hidpi-src="{% static 'TeekerApp/images/star28x28_2x.png?crc=11289704' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15922_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+      </div>
+      <div class="temp_no_id" data-orig-id="u15920-wrapper">
+       <a class="nonblock nontext MuseLinkActive clip_frame temp_no_id" href="inbox" data-orig-id="u15920"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/mail28x28.png?crc=350965624' %}" data-hidpi-src="{% static 'TeekerApp/images/mail28x28_2x.png?crc=4184023386' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15920_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+      </div>
+      <div class="temp_no_id" data-orig-id="u15916-wrapper">
+       <a class="nonblock nontext clip_frame temp_no_id" href="settings" data-orig-id="u15916"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/gear28x28.png?crc=369303054' %}" data-hidpi-src="{% static 'TeekerApp/images/gear28x28_2x.png?crc=267937453' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15916_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+      </div>
+     </div>
+    </div>
+    <span class="verticalspacer placeholder" data-placeholder-for="page_5_content"><!-- placeholder node --></span>
    </div>
   </div>
   <div class="breakpoint" id="bp_320" data-max-width="320"><!-- responsive breakpoint node -->
    <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
+    <span class="mobile_box_black_background placeholder" data-placeholder-for="u25506_content"><!-- placeholder node --></span>
     <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo42x43.png?crc=332900157' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo42x43_2x.png?crc=4171947448' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="42" data-image-height="42" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     <span class="browser_width placeholder" data-placeholder-for="u15910-bw_content"><!-- placeholder node --></span>
-    <div class="temp_no_id" data-orig-id="u15911-wrapper">
-     <div class="clearfix temp_no_id" data-orig-id="u15911"><!-- group -->
-      <div class="temp_no_id" data-orig-id="u15914-wrapper">
-       <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u15914"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/house28x28.png?crc=3954792036' %}" data-hidpi-src="{% static 'TeekerApp/images/house28x28_2x.png?crc=3974630160' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15914_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-      <div class="temp_no_id" data-orig-id="u15912-wrapper">
-       <div class="clip_frame temp_no_id" data-orig-id="u15912"><!-- image -->
-        <img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/hand28x28.png?crc=3808520970' %}" data-hidpi-src="{% static 'TeekerApp/images/hand28x28_2x.png?crc=4275896624' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15912_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
-       </div>
-      </div>
-      <div class="temp_no_id" data-orig-id="u15918-wrapper">
-       <a class="nonblock nontext clip_frame temp_no_id" href="upload_post" data-orig-id="u15918"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/upload28x28.png?crc=494637942' %}" data-hidpi-src="{% static 'TeekerApp/images/upload28x28_2x.png?crc=3771207124' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15918_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-      <div class="temp_no_id" data-orig-id="u15922-wrapper">
-       <a class="nonblock nontext clip_frame temp_no_id" href="subscriptions" data-orig-id="u15922"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/star28x28.png?crc=3813974433' %}" data-hidpi-src="{% static 'TeekerApp/images/star28x28_2x.png?crc=531472410' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15922_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-      <div class="temp_no_id" data-orig-id="u15920-wrapper">
-       <a class="nonblock nontext MuseLinkActive clip_frame temp_no_id" href="inbox" data-orig-id="u15920"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/mail28x28.png?crc=469803815' %}" data-hidpi-src="{% static 'TeekerApp/images/mail28x28_2x.png?crc=246777446' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15920_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-      <div class="temp_no_id" data-orig-id="u15916-wrapper">
-       <a class="nonblock nontext clip_frame temp_no_id" href="settings" data-orig-id="u15916"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/gear28x28.png?crc=4204195502' %}" data-hidpi-src="{% static 'TeekerApp/images/gear28x28_2x.png?crc=148084405' %}" alt="" data-heightwidthratio="1" data-image-width="28" data-image-height="28" data-orig-id="u15916_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
-    </div>
-    <span class="verticalspacer placeholder" data-placeholder-for="page_4_content"><!-- placeholder node --></span>
+    <span class="placeholder" data-placeholder-for="u15911-wrapper_content"><!-- placeholder node --></span>
+    <span class="verticalspacer placeholder" data-placeholder-for="page_5_content"><!-- placeholder node --></span>
    </div>
   </div>
   <!-- Other scripts -->

@@ -15,15 +15,15 @@ document.documentElement.className = document.documentElement.className.replace(
 if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.watch.js", "jquery.museresponsive.js", "require.js", "upload_post.css"], "outOfDate":[]};
 </script>
   
-  <title>Upload Post</title>
+  <title>Upload</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=3858795379' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/upload_post.css?crc=458840823' %}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=4153465552' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/upload_post.css?crc=3791616609' %}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=23281128' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_upload_post.css?crc=4086341675' %}" id="nomq_pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_upload_post.css?crc=4257171539' %}" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -37,6 +37,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     
 <!-- Tiny logo icon in tab -->
 	<link href="{% static 'TeekerApp/icon/tk_tab_logo.png' %}" rel="shortcut icon"/>
+<style>
+.mobile_box_black_background {
+min-height: 100vh !important;
+height: 100vh !important;
+}
+</style>
  </head>
  <body>
 
@@ -103,7 +109,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         </button>
        </div>
       </div>
-     </form>
+     {% csrf_token %}
+      </form>
     </div>
     <div class="clearfix grpelem" id="pu97"><!-- group -->
      <a class="nonblock nontext clip_frame" id="u97" href="\"><!-- image --><img class="block temp_no_img_src" id="u97_img" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo.png?crc=472355463' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo_2x.png?crc=467144595' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="60" data-image-height="60" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
@@ -174,7 +181,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         </button>
        </div>
       </div>
-     </form>
+     {% csrf_token %}
+      </form>
     </div>
     <div class="clearfix grpelem temp_no_id" data-orig-id="pu97"><!-- group -->
      <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo38x38.png?crc=4190248241' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo38x38_2x.png?crc=495093929' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="38" data-image-height="38" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
@@ -243,13 +251,14 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         </button>
        </div>
       </div>
-     </form>
+     {% csrf_token %}
+      </form>
     </div>
     <div class="clearfix grpelem temp_no_id" data-orig-id="pu97"><!-- group -->
      <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo56x56.png?crc=4147823227' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo56x56_2x.png?crc=467144595' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="55" data-image-height="55" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
-    <div class="verticalspacer" data-offset-top="811" data-content-above-spacer="810" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+    <div class="verticalspacer" data-offset-top="784" data-content-above-spacer="783" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
     <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
      <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
       <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
@@ -309,7 +318,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         </button>
        </div>
       </div>
-     </form>
+     {% csrf_token %}
+      </form>
      <div class="clip_frame grpelem temp_no_id" data-orig-id="u14563"><!-- image -->
       <img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u145634.jpg?crc=220618613' %}" data-hidpi-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u14563_2x4.jpg?crc=4089667575' %}" alt="" data-heightwidthratio="0.40074906367041196" data-image-width="267" data-image-height="107" data-orig-id="u14563_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
      </div>
@@ -318,7 +328,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo54x54.png?crc=4156838893' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo54x54_2x.png?crc=467144595' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="54" data-image-height="54" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
-    <div class="verticalspacer" data-offset-top="1017" data-content-above-spacer="1017" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+    <div class="verticalspacer" data-offset-top="584" data-content-above-spacer="583" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
     <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
      <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
       <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
@@ -329,8 +339,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
    </div>
   </div>
-  <div class="breakpoint" id="bp_480" data-min-width="321" data-max-width="480"><!-- responsive breakpoint node -->
+  <div class="breakpoint" id="bp_480" data-min-width="381" data-max-width="480"><!-- responsive breakpoint node -->
    <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
+    <div class="mobile_box_black_background shared_content" id="u25506" data-content-guid="u25506_content"><!-- simple frame -->
+     <div class="fluid_height_spacer"></div>
+    </div>
     <span class="clearfix grpelem placeholder" data-placeholder-for="u14591-16_content"><!-- placeholder node --></span>
     <div class="clearfix grpelem temp_no_id" data-orig-id="pwidgetu14318"><!-- group -->
      <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="upload_post" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14318"><!-- none box -->
@@ -378,7 +391,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         </button>
        </div>
       </div>
-     </form>
+     {% csrf_token %}
+      </form>
      <div class="clip_frame grpelem temp_no_id" data-orig-id="u14563"><!-- image -->
       <img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u145635.jpg?crc=534848511' %}" data-hidpi-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u14563_2x5.jpg?crc=3945617142' %}" alt="" data-heightwidthratio="0.40119760479041916" data-image-width="167" data-image-height="67" data-orig-id="u14563_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
      </div>
@@ -390,8 +404,72 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="verticalspacer" data-offset-top="1568" data-content-above-spacer="1568" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
    </div>
   </div>
+  <div class="breakpoint" id="bp_380" data-min-width="321" data-max-width="380"><!-- responsive breakpoint node -->
+   <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
+    <span class="mobile_box_black_background placeholder" data-placeholder-for="u25506_content"><!-- placeholder node --></span>
+    <span class="clearfix grpelem placeholder" data-placeholder-for="u14591-16_content"><!-- placeholder node --></span>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="pwidgetu14318"><!-- group -->
+     <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="upload_post" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14318"><!-- none box -->
+      <div class="position_content temp_no_id" data-orig-id="widgetu14318_position_content">
+       <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14511"><!-- none box -->
+        <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu14511_input" data-orig-id="u14512-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u14512-4_0_content"><!-- placeholder node --></span></label>
+        <span class="fld-input NoWrap actAsDiv clearfix colelem temp_no_id" data-orig-id="u14513-4"><!-- content --><div class="temp_no_id" data-orig-id="u14513-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu14511_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu14511_input" data-orig-id="widgetu14511_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu14511_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+       </div>
+       <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14321"><!-- none box -->
+        <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu14321_input" data-orig-id="u14324-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u14324-4_0_content"><!-- placeholder node --></span></label>
+        <span class="fld-input NoWrap actAsDiv clearfix colelem temp_no_id" data-orig-id="u14322-4"><!-- content --><div class="temp_no_id" data-orig-id="u14322-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu14321_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu14321_input" data-orig-id="widgetu14321_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu14321_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+       </div>
+       <div class="fld-grp clearfix colelem temp_no_id" data-required="false" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14331"><!-- none box -->
+        <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu14331_input" data-orig-id="u14334-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u14334-4_0_content"><!-- placeholder node --></span></label>
+        <span class="fld-textarea actAsDiv clearfix colelem temp_no_id" data-orig-id="u14332-4"><!-- content --><div class="temp_no_id" data-orig-id="u14332-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu14331_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu14331_input" data-orig-id="widgetu14331_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu14331_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+       </div>
+       <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14454"><!-- none box -->
+        <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu14454_input" data-orig-id="u14455-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u14455-4_0_content"><!-- placeholder node --></span></label>
+        <span class="fld-textarea actAsDiv clearfix colelem temp_no_id" data-orig-id="u14456-4"><!-- content --><div class="temp_no_id" data-orig-id="u14456-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu14454_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu14454_input" data-orig-id="widgetu14454_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu14454_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+       </div>
+       <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14615"><!-- none box -->
+        <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu14615_input" data-orig-id="u14618-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u14618-4_0_content"><!-- placeholder node --></span></label>
+        <span class="fld-input NoWrap actAsDiv clearfix colelem temp_no_id" data-orig-id="u14616-4"><!-- content --><div class="temp_no_id" data-orig-id="u14616-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu14615_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu14615_input" data-orig-id="widgetu14615_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu14615_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+       </div>
+       <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14672"><!-- none box -->
+        <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu14672_input" data-orig-id="u14674-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u14674-4_0_content"><!-- placeholder node --></span></label>
+        <span class="fld-input NoWrap actAsDiv clearfix colelem temp_no_id" data-orig-id="u14675-4"><!-- content --><div class="temp_no_id" data-orig-id="u14675-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu14672_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu14672_input" data-orig-id="widgetu14672_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu14672_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+       </div>
+       <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14724"><!-- none box -->
+        <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu14724_input" data-orig-id="u14725-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u14725-4_0_content"><!-- placeholder node --></span></label>
+        <span class="fld-input NoWrap actAsDiv clearfix colelem temp_no_id" data-orig-id="u14726-4"><!-- content --><div class="temp_no_id" data-orig-id="u14726-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu14724_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu14724_input" data-orig-id="widgetu14724_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu14724_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+       </div>
+       <div class="clearfix colelem temp_no_id" data-orig-id="pu14325-4"><!-- group -->
+        <div class="clearfix grpelem temp_no_id" data-orig-id="u14325-4"><!-- content -->
+         <span class="placeholder" data-placeholder-for="u14325-4_0_content"><!-- placeholder node --></span>
+        </div>
+        <div class="clearfix grpelem temp_no_id" data-orig-id="u14319-4"><!-- content -->
+         <span class="placeholder" data-placeholder-for="u14319-4_0_content"><!-- placeholder node --></span>
+        </div>
+        <div class="clearfix grpelem temp_no_id" data-orig-id="u14326-4"><!-- content -->
+         <span class="placeholder" data-placeholder-for="u14326-4_0_content"><!-- placeholder node --></span>
+        </div>
+        <button class="submit-btn NoWrap rounded-corners clearfix grpelem temp_no_id" type="submit" value="Submit" tabindex="48" data-orig-id="u14320-4"><!-- content -->
+         <span class="placeholder" data-placeholder-for="u14320-4_0_content"><!-- placeholder node --></span>
+        </button>
+       </div>
+      </div>
+     {% csrf_token %}
+      </form>
+     <div class="clip_frame grpelem temp_no_id" data-orig-id="u14563"><!-- image -->
+      <img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u145636.jpg?crc=170224701' %}" data-hidpi-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u14563_2x6.jpg?crc=205129465' %}" alt="" data-heightwidthratio="0.39849624060150374" data-image-width="133" data-image-height="53" data-orig-id="u14563_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
+     </div>
+    </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="pu97"><!-- group -->
+     <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo40x40.png?crc=4054165183' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo40x40_2x.png?crc=4183110726' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="40" data-image-height="40" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
+     <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
+    </div>
+    <div class="verticalspacer" data-offset-top="1829" data-content-above-spacer="1829" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+   </div>
+  </div>
   <div class="breakpoint" id="bp_320" data-max-width="320"><!-- responsive breakpoint node -->
    <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
+    <span class="mobile_box_black_background placeholder" data-placeholder-for="u25506_content"><!-- placeholder node --></span>
     <span class="clearfix grpelem placeholder" data-placeholder-for="u14591-16_content"><!-- placeholder node --></span>
     <div class="clearfix grpelem temp_no_id" data-orig-id="pwidgetu14318"><!-- group -->
      <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="upload_post" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu14318"><!-- none box -->
@@ -434,14 +512,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <div class="clearfix grpelem temp_no_id" data-orig-id="u14326-4"><!-- content -->
          <span class="placeholder" data-placeholder-for="u14326-4_0_content"><!-- placeholder node --></span>
         </div>
-        <button class="submit-btn NoWrap rounded-corners clearfix grpelem temp_no_id" type="submit" value="Submit" tabindex="48" data-orig-id="u14320-4"><!-- content -->
+        <button class="submit-btn NoWrap rounded-corners clearfix grpelem temp_no_id" type="submit" value="Submit" tabindex="56" data-orig-id="u14320-4"><!-- content -->
          <span class="placeholder" data-placeholder-for="u14320-4_0_content"><!-- placeholder node --></span>
         </button>
        </div>
       </div>
-     </form>
+     {% csrf_token %}
+      </form>
      <div class="clip_frame grpelem temp_no_id" data-orig-id="u14563"><!-- image -->
-      <img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u145636.jpg?crc=466199524' %}" data-hidpi-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u14563_2x6.jpg?crc=425041386' %}" alt="" data-heightwidthratio="0.4017857142857143" data-image-width="112" data-image-height="45" data-orig-id="u14563_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
+      <img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u145637.jpg?crc=466199524' %}" data-hidpi-src="{% static 'TeekerApp/images/upload_thumbnail-crop-u14563_2x7.jpg?crc=425041386' %}" alt="" data-heightwidthratio="0.4017857142857143" data-image-width="112" data-image-height="45" data-orig-id="u14563_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/>
      </div>
     </div>
     <div class="clearfix grpelem temp_no_id" data-orig-id="pu97"><!-- group -->
@@ -470,7 +549,7 @@ Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.resizeHeight('.browser_width');/* resize height */
 Muse.Utils.requestAnimationFrame(function() { $('body').addClass('initialized'); });/* mark body as initialized */
 Muse.Utils.makeButtonsVisibleAfterSettingMinWidth();/* body */
-Muse.Utils.initWidget('#widgetu14318', ['#bp_infinity', '#bp_1200', '#bp_992', '#bp_768', '#bp_480', '#bp_320'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:false}); });/* #widgetu14318 */
+Muse.Utils.initWidget('#widgetu14318', ['#bp_infinity', '#bp_1200', '#bp_992', '#bp_768', '#bp_480', '#bp_380', '#bp_320'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:false}); });/* #widgetu14318 */
 Muse.Utils.fullPage('#page');/* 100% height page */
 $( '.breakpoint' ).registerBreakpoint();/* Register breakpoints */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
