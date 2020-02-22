@@ -21,16 +21,38 @@ recovery_urls = []
 
 # Create your views here.
 
-def index(request):
+def index(request, search=None):
     """Used for Home page"""
+
+    if not search:
+        search="oyrq-qzOx1U" # If no searches have been made use this as default
+
     html_content = {"message": "G",
                     "title": "My Morning Vibes",
-                    "average_rating": 8}
+                    "average_rating": 8,
+                    "youtube_easteregg": search}
 
     if request.user.is_staff:
         return render(request, "TeekerApp/index.html", html_content)
     else:
         return render(request, "TeekerApp/not_staff.html", html_content)
+
+
+def search_bar(request): # For now this is just used as a Alpha Easter Egg
+    """ Displays the profile of other users in a different way compared to when you own the account. """
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html")
+
+    if request.method == "POST":
+
+        if request.POST["search"]:
+            yt_video = str(request.POST["search"])
+        else:
+            print("Nothing to search...")
+
+    return HttpResponseRedirect(reverse("index_search", args=(yt_video,)))
 
 
 def get_client_ip(request):
@@ -578,15 +600,4 @@ def visitor_account_view(request):
 
     return render(request, "TeekerApp/visitor_account_view.html", html_content)
 
-
-def search_bar(request):
-    """ Displays the profile of other users in a different way compared to when you own the account. """
-
-    html_content = {"":""}
-
-    # Check if the user is Staff (Only Staff are allowed to view this page)
-    if not request.user.is_staff:
-        return render(request, "TeekerApp/not_staff.html", html_content)
-
-    return HttpResponseRedirect(reverse("index"))
     
