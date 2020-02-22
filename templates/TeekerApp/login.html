@@ -18,10 +18,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>Login</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=4153465552' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/login.css?crc=4154135476' %}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=3858532017' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/login.css?crc=438686830' %}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/iefonts_login.css?crc=3824530138' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=23281128' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_login.css?crc=388318498' %}" id="nomq_pagesheet"/>
   <![endif]-->
@@ -30,7 +31,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    var __adobewebfontsappname__ = "muse";
 </script>
   <!-- JS includes -->
-  <script src="https://webfonts.creativecloud.com/source-sans-pro:n4:default.js" type="text/javascript"></script>
+  <script src="https://webfonts.creativecloud.com/source-sans-pro:n7,n4:default.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
   <script src="{% static 'TeekerApp/scripts/html5shiv.js?crc=4241844378' %}" type="text/javascript"></script>
   <![endif]-->
@@ -41,6 +42,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 .mobile_box_black_background {
 min-height: 100vh !important;
 height: 100vh !important;
+min-width: 100vh !important;
+width: 100vh !important;
 }
 </style>
  </head>
@@ -52,7 +55,6 @@ height: 100vh !important;
      <div class="clearfix colelem shared_content" id="u646-5" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-leftAdjustmentDoneBy="pu646-5" data-content-guid="u646-5_content"><!-- content -->
       <p>Welcome To Tee<span id="u646-2">Ker</span></p>
      </div>
-     <p style="font-size: small; color: rgb(164, 0, 0);">{{message}}</p>
      <form class="form-grp clearfix colelem" id="widgetu307" method="post" enctype="multipart/form-data" action="login" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-leftAdjustmentDoneBy="pu646-5"><!-- none box -->
       <div class="position_content" id="widgetu307_position_content">
        <div class="fld-grp clearfix colelem" id="widgetu320" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->

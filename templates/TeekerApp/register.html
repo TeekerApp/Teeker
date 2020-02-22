@@ -18,8 +18,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>Register</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=4153465552' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/register.css?crc=353132993' %}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=3858532017' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/register.css?crc=459389109' %}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=23281128' %}"/>
@@ -43,13 +43,16 @@ var muReCAPTCHA2OnloadCallback = function() {
 </script>
     
 <!-- Tiny logo icon in tab -->
-  <link href="{% static 'TeekerApp/icon/tk_tab_logo.png' %}" rel="shortcut icon"/>
-  <!-- My own JS -->
+   <link href="{% static 'TeekerApp/icon/tk_tab_logo.png' %}" rel="shortcut icon"/>
+     <!-- My own JS -->
  <script type="text/javascript" src="{% static 'TeekerApp/js/register.js' %}"></script>
+
 <style>
 .mobile_box_black_background {
 min-height: 100vh !important;
 height: 100vh !important;
+min-width: 100vh !important;
+width: 100vh !important;
 }
 </style>
  </head>
@@ -61,26 +64,26 @@ height: 100vh !important;
      <div class="position_content" id="widgetu664_position_content">
       <div class="fld-grp clearfix colelem" id="widgetu4337" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
         <p style="font-size: small; color: rgb(164, 0, 0);">{{message}}</p>
-        <label class="fld-label actAsDiv clearfix colelem" id="u4338-4" for="widgetu4337_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u4338-4_0_content">Username must be 5-15 characters long.</span></label>
-       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u4340-4"><!-- content --><div id="u4340-3"><input class="wrapped-input shared_content" type="text" minlength="5" maxlength="15" id="widgetu4337_input" name="username" tabindex="1" data-content-guid="widgetu4337_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4337_prompt" for="widgetu4337_input"><span class="actAsPara shared_content" data-content-guid="widgetu4337_prompt_0_content">Username</span></label></div></span>
+       <label class="fld-label actAsDiv clearfix colelem" id="u4338-4" for="widgetu4337_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u4338-4_0_content">Username must be 5-15 characters long.</span></label>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u4340-4"><!-- content --><div id="u4340-3"><input class="wrapped-input shared_content username" minlength="5" maxlength="15" type="text" id="widgetu4337_input" name="username" tabindex="1" data-content-guid="widgetu4337_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4337_prompt" for="widgetu4337_input"><span class="actAsPara shared_content" data-content-guid="widgetu4337_prompt_0_content">Username</span></label></div></span>
       </div>
       <div class="clearfix colelem" id="pwidgetu4385"><!-- group -->
        <div class="fld-grp clearfix grpelem" id="widgetu4385" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
-        <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4388-4"><!-- content --><div id="u4388-3"><input class="wrapped-input shared_content" type="text" id="widgetu4385_input" name="first_name" tabindex="2" data-content-guid="widgetu4385_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4385_prompt" for="widgetu4385_input"><span class="actAsPara shared_content" data-content-guid="widgetu4385_prompt_0_content">First Name</span></label></div></span>
+        <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4388-4"><!-- content --><div id="u4388-3"><input class="wrapped-input shared_content first_name" minlength="1" maxlength="300" type="text" id="widgetu4385_input" name="first_name" tabindex="2" data-content-guid="widgetu4385_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4385_prompt" for="widgetu4385_input"><span class="actAsPara shared_content" data-content-guid="widgetu4385_prompt_0_content">First Name</span></label></div></span>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu4429" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
-        <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4432-4"><!-- content --><div id="u4432-3"><input class="wrapped-input shared_content" type="text" id="widgetu4429_input" name="last_name" tabindex="3" data-content-guid="widgetu4429_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4429_prompt" for="widgetu4429_input"><span class="actAsPara shared_content" data-content-guid="widgetu4429_prompt_0_content">Last Name</span></label></div></span>
+        <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4432-4"><!-- content --><div id="u4432-3"><input class="wrapped-input shared_content last_name" minlength="1" maxlength="300" type="text" id="widgetu4429_input" name="last_name" tabindex="3" data-content-guid="widgetu4429_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4429_prompt" for="widgetu4429_input"><span class="actAsPara shared_content" data-content-guid="widgetu4429_prompt_0_content">Last Name</span></label></div></span>
        </div>
       </div>
       <div class="fld-grp clearfix colelem" id="widgetu4473" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4476-4"><!-- content --><div id="u4476-3"><input class="wrapped-input shared_content" type="email" id="widgetu4473_input" name="email" tabindex="4" data-content-guid="widgetu4473_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4473_prompt" for="widgetu4473_input"><span class="actAsPara shared_content" data-content-guid="widgetu4473_prompt_0_content">E-mail</span></label></div></span>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4476-4"><!-- content --><div id="u4476-3"><input class="wrapped-input shared_content email" type="text" id="widgetu4473_input" name="email" tabindex="4" data-content-guid="widgetu4473_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4473_prompt" for="widgetu4473_input"><span class="actAsPara shared_content" data-content-guid="widgetu4473_prompt_0_content">E-mail</span></label></div></span>
       </div>
       <div class="fld-grp clearfix colelem" id="widgetu4517" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
        <label class="fld-label actAsDiv clearfix colelem" id="u4520-4" for="widgetu4517_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u4520-4_0_content">Password must be 8-64 characters long. Uses of .,@#% is recommended to make your password stronger.</span></label>
-       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u4519-4"><!-- content --><div id="u4519-3"><input class="wrapped-input shared_content" type="password" minlength="8" maxlength="64" id="widgetu4517_input" name="pwd" tabindex="5" data-content-guid="widgetu4517_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4517_prompt" for="widgetu4517_input"><span class="actAsPara shared_content" data-content-guid="widgetu4517_prompt_0_content">Password</span></label></div></span>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u4519-4"><!-- content --><div id="u4519-3"><input class="wrapped-input shared_content pwd" type="password" id="widgetu4517_input" minlength="8" maxlength="64" name="pwd" tabindex="5" data-content-guid="widgetu4517_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4517_prompt" for="widgetu4517_input"><span class="actAsPara shared_content" data-content-guid="widgetu4517_prompt_0_content">Password</span></label></div></span>
       </div>
       <div class="fld-grp clearfix colelem" id="widgetu4561" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4562-4"><!-- content --><div id="u4562-3"><input class="wrapped-input shared_content" type="password" id="widgetu4561_input" name="cpwd" tabindex="6" data-content-guid="widgetu4561_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4561_prompt" for="widgetu4561_input"><span class="actAsPara shared_content" data-content-guid="widgetu4561_prompt_0_content">Confirm Password</span></label></div></span>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u4562-4"><!-- content --><div id="u4562-3"><input class="wrapped-input shared_content cpwd" type="password" id="widgetu4561_input" minlength="8" maxlength="64" name="cpwd" tabindex="6" data-content-guid="widgetu4561_input_content"/><label class="wrapped-input fld-prompt" id="widgetu4561_prompt" for="widgetu4561_input"><span class="actAsPara shared_content" data-content-guid="widgetu4561_prompt_0_content">Confirm Password</span></label></div></span>
       </div>
       <div class="fld-grp clearfix colelem" id="widgetu1133" data-required="true" data-type="checkbox" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
        <div class="fld-checkbox museBGSize grpelem" id="u1141"><!-- simple frame -->
