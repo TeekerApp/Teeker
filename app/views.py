@@ -47,7 +47,7 @@ def index(request, search=None):
         return render(request, "TeekerApp/not_staff.html", html_content)
 
 def acme_challenge(request):
-    return HttpResponse(settings.ACME_CHALLENGE_CONTENT)
+    return render(request, "TeekerApp/acme_challenge_content.html")
 
 
 def search_bar(request): # For now this is just used as a Alpha Easter Egg
