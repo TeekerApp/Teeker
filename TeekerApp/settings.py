@@ -38,6 +38,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["https://teeker.co"]
 
+ACME_CHALLENGE_CONTENT = os.environ['ACME_CHALLENGE_CONTENT']
+
 
 ADMINS = (
     ("LT.Sana", "snm.developer@gmail.com"),
@@ -161,3 +163,6 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG=False # Toggle sandbox mode (when running in DEBU
 
 # Used for reCAPTCHA verification
 RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
+
+# GOOGLE API
+GOOGLE_API = os.getenv("GOOGLE_API")

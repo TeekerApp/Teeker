@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("/<slug:search>", views.index, name="index_search"),
+    path("results=<slug:search>", views.index, name="index_search"),
     path("account", views.account, name="account"),
     path("register", views.register, name="register"),
     path("register/<slug:option>", views.register_validation, name="register_validation"),

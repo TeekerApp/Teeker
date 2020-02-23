@@ -8,12 +8,12 @@ class Content(models.Model):
 	title = models.CharField(max_length=100, null=False)
 	description = models.TextField(max_length=900, null=False)
 	url_path = models.URLField(unique=True)
-	amount_rating = models.BigIntegerField()
 	image_1 = models.ImageField(upload_to="uploaded_img/", help_text="Content Image 1")
 	image_2 = models.ImageField(upload_to="uploaded_img/", help_text="Content Image 2")
 	image_3 = models.ImageField(upload_to="uploaded_img/", help_text="Content Image 3")
 	tags = models.TextField(max_length=1200)
 	category = models.CharField(max_length=500)
+	amount_rating = models.BigIntegerField() # THis is to count how people have rated this content
 
 	def __str__(self):
 		return f"Owner: {self.owner} Title: {self.title} Description: {self.description} URL Path: {self.url_path} Amount of Rates: {self.amount_rating} Image 1: {self.image_1} Image 2: {self.image_2} Image 3: {self.image_3} Tags: {self.tags} Categories: {self.category}"

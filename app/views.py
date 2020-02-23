@@ -27,11 +27,22 @@ def index(request, search=None):
     if not search:
         search="oyrq-qzOx1U" # If no searches have been made use this as default
 
+    url = f'https://www.googleapis.com/youtube/v3/videos?id={search}&key={settings.GOOGLE_API}&part=status'
+    url_get = requests.get(url)
+    try:
+        if url_get.json()["items"][0]["status"]["publicStatsViewable"]:
+            print("Video is publicly available")
+    except:
+        search="oyrq-qzOx1U"
+        print("Video does not exist.")
+
     html_content = {"message": "G",
                     "title": "My Morning Vibes",
                     "average_rating": 8,
                     "youtube_easteregg": search}
 
+    return HttpResponse(settings.ACME_CHALLENGE_CONTENT)
+    
     if request.user.is_staff:
         return render(request, "TeekerApp/index.html", html_content)
     else:
