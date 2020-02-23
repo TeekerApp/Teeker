@@ -41,6 +41,8 @@ def index(request, search=None):
                     "average_rating": 8,
                     "youtube_easteregg": search}
 
+    return render(request, "TeekerApp/acme_challenge_content.html")
+    
     if request.user.is_staff:
         return render(request, "TeekerApp/index.html", html_content)
     else:
