@@ -41,12 +41,13 @@ def index(request, search=None):
                     "average_rating": 8,
                     "youtube_easteregg": search}
 
-    return HttpResponse(settings.ACME_CHALLENGE_CONTENT)
-    
     if request.user.is_staff:
         return render(request, "TeekerApp/index.html", html_content)
     else:
         return render(request, "TeekerApp/not_staff.html", html_content)
+
+def acme_challenge(request):
+    return HttpResponse(settings.ACME_CHALLENGE_CONTENT)
 
 
 def search_bar(request): # For now this is just used as a Alpha Easter Egg
