@@ -20,6 +20,5 @@ urlpatterns = [
     path("inbox", views.inbox, name="inbox"),
     path("subscriptions", views.subscriptions, name="subscriptions"),
     path("upload_post", views.upload_post, name="upload_post"),
-    path("visitor_account_view/<slug:option>", views.visitor_account_view, name="visitor_account_view"),
-    path(".well-known/acme-challenge/<slug:key>", views.acme_challenge, name='acme-challenge')
+    path("visitor_account_view/<slug:option>", views.visitor_account_view, name="visitor_account_view")
 ]
