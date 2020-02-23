@@ -38,8 +38,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["https://teeker.co"]
 
-ACME_CHALLENGE_CONTENT = os.environ['ACME_CHALLENGE_CONTENT']
-
 
 ADMINS = (
     ("LT.Sana", "snm.developer@gmail.com"),
