@@ -11,6 +11,9 @@ from django.conf import settings
 import os
 import requests
 
+# Get custom models
+from .models import feedback_content, account_settings
+
 # Used to store password recovery urls
 recovery_url_email = {}
 recovery_email_url = {}
@@ -18,10 +21,48 @@ recovery_urls = []
 
 # Create your views here.
 
-def index(request):
+def index(request, search=None):
     """Used for Home page"""
-    html_content = {"message": "G"}
-    return render(request, "TeekerApp/index.html", html_content)
+
+    if not search:
+        search="oyrq-qzOx1U" # If no searches have been made use this as default
+
+    url = f'https://www.googleapis.com/youtube/v3/videos?id={search}&key={settings.GOOGLE_API}&part=status'
+    url_get = requests.get(url)
+    try:
+        if url_get.json()["items"][0]["status"]["publicStatsViewable"]:
+            print("Video is publicly available")
+    except:
+        search="oyrq-qzOx1U"
+        print("Video does not exist.")
+
+    html_content = {"message": "G",
+                    "title": "My Morning Vibes",
+                    "average_rating": 8,
+                    "youtube_easteregg": search}
+
+    if request.user.is_staff:
+        return render(request, "TeekerApp/index.html", html_content)
+    else:
+        return render(request, "TeekerApp/not_staff.html", html_content)
+
+
+def search_bar(request): # For now this is just used as a Alpha Easter Egg
+    """ Displays the profile of other users in a different way compared to when you own the account. """
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html")
+
+    if request.method == "POST":
+
+        if request.POST["search"]:
+            yt_video = str(request.POST["search"])
+        else:
+            print("Nothing to search...")
+
+    return HttpResponseRedirect(reverse("index_search", args=(yt_video,)))
+
 
 def get_client_ip(request):
     """ Used in register for reCAPTCHA verification. This gets the users Public IP address """
@@ -34,6 +75,10 @@ def get_client_ip(request):
 
 def register(request):
     """Used for sign up/register page"""
+
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
 
     # Check if the request is POST
     if request.method == "POST":
@@ -117,6 +162,10 @@ def register(request):
                                         last_name=last_name,
                                         password=password)
             f.save() # Save the new users details to the Database
+
+            account_settings(owner=int(request.user.pk),
+                            news_letter=False # For now the News letter option will stay Disabled till futher notice
+                            ).save()
             
             # Send the new user a email
             send_mail("Welcome To Teeker",
@@ -197,6 +246,10 @@ def logout_page(request):
 def forgot_pwd(request, html_content=None):
     """ Used for recovering user password """
 
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
+
     if request.method == "POST":
 
         # Check if the email the user gave exists in the Database
@@ -246,18 +299,28 @@ def forgot_pwd(request, html_content=None):
                                             <br>
                                             <small class='text text-muted'>Don't reply to this email.</small>""")
                     break # Break the loop
-
-    if not html_content:
         html_content = {
-            "option": "email",
-            "message": ""
-        }
+                "option": "email",
+                "success_message": "Check your inbox now. (If you can't find it check the spam mail)"
+            }
+        return render(request, "TeekerApp/forgot_pwd.html", html_content)
+
+    elif request.method == "GET":
+        if not html_content:
+            html_content = {
+                "option": "email",
+                "message": ""
+            }
 
     return render(request, "TeekerApp/forgot_pwd.html", html_content)
 
 
 def forgot_pwd_handler(request, option):
     """ Used to handle the forgot password URL and password changes """
+
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
 
     # Check if the URL in the option variable doesn't exists in the 'recovery_urls' list
     if option not in recovery_urls:
@@ -273,6 +336,10 @@ def forgot_pwd_handler(request, option):
 
 def forgot_pwd_change(request, option):
     """ Used to update the account password to the new one. """
+
+    # Make sure the user is sent to the home page
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
 
@@ -366,7 +433,180 @@ def forgot_pwd_change(request, option):
 def account(request):
     """ Used for account page to display Account information """
     
-    html_content = {""}
+    html_content = {"":""}
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html", html_content)
     
     return render(request, "TeekerApp/account.html", html_content)
+
+
+def feedback(request):
+    """ Used for giving feedback. Mostly looking for bug issue reports. """
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html")
+
+    if request.method == "POST":
+
+        if request.POST["subject"]:
+            subject_v = str(request.POST["subject"])
+
+            if request.POST["message"]:
+                message_v = str(request.POST["message"])
+
+                # Check if the reCAPTCHA was successful (reCAPTCHA v2.0)
+                try:
+                    if not request.POST["g-recaptcha-response"]:
+                        html_content = {"alert_message": "Failed to check reCAPTCHA."}
+                    else:
+                        captcha_rs = request.POST["g-recaptcha-response"]
+                        url_recaptcha = "https://www.google.com/recaptcha/api/siteverify"
+                        params = {
+                            "secret": settings.RECAPTCHA_SECRET_KEY,
+                            "response": captcha_rs,
+                            "remoteip": get_client_ip(request)
+                        }
+                        verify_rs = requests.get(url_recaptcha, params=params, verify=True)
+                        verify_rs = verify_rs.json()
+                        if not verify_rs["success"]:
+                            html_content = {"alert_message": "reCAPTCHA not valid. Try again in 1 minute."}
+                except KeyError:
+                    html_content = {"alert_message": "Failed to check reCAPTCHA."}
+
+                feedback_content(owner=int(request.user.pk),
+                                 subject=subject_v,
+                                 feedback=message_v).save()
+                
+                # Get all FeedBack Data
+                p_feedback = feedback_content.objects.all()
+                if p_feedback:
+                    feedback_html_c = []
+                    for i in p_feedback:
+                        p_user = User.objects.get(pk=int(i.owner))
+                        feedback_html_c.append({
+                            "username": p_user.username,
+                            "subject": i.subject,
+                            "feedback_message": i.feedback,
+                            "date": i.date
+                            })
+
+                    html_content = {
+                        "feedback_html": feedback_html_c,
+                        "success_message": "FeedBack has been Received and will be viewed soon! Thank You."
+                        }
+                else:
+                    html_content = {"success_message": "FeedBack has been Received and will be viewed soon! Thank You."}
+
+                return render(request, "TeekerApp/feedback.html", html_content)
+            else:
+                html_content = {"alert_message": "FeedBack Message missing!"}
+                return render(request, "TeekerApp/feedback.html", html_content)
+        else:
+            html_content = {"alert_message": "Subject is missing!"}
+            return render(request, "TeekerApp/feedback.html", html_content)
+
+    elif request.method == "GET":
+
+        # Get all FeedBack Data
+        p_feedback = feedback_content.objects.all()
+        if p_feedback:
+            feedback_html_c = []
+            for i in p_feedback:
+                p_user = User.objects.get(pk=int(i.owner))
+                feedback_html_c.append({
+                    "username": p_user.username,
+                    "subject": i.subject,
+                    "feedback_message": i.feedback,
+                    "date": i.date
+                    })
+
+            html_content = {
+                "feedback_html": feedback_html_c
+                }
+        else:
+            html_content = {"":""}
+
+    return render(request, "TeekerApp/feedback.html", html_content)
+
+
+def settings_page(request):
+    """ Used to show the users account settings and allow them to modify them. """
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html")
+
+    try:
+        f = account_settings.objects.get(owner=int(request.user.pk))
+        if f:
+            html_content = {
+                "news_letter": f.news_letter,
+                "inbox_notifications": f.inbox_notifications,
+                "browser_notifications": f.browser_notifications
+            }
+    except account_settings.DoesNotExist:
+        html_content = {
+            "news_letter": False,
+            "inbox_notifications": False,
+            "browser_notifications": False
+        }
+
+        # I don't know if this should be here or not (This might be removed in the future)
+        account_settings(owner=int(request.user.pk),
+                            news_letter=False # For now the News letter option will stay Disabled till futher notice
+                            ).save()
+
+    return render(request, "TeekerApp/settings.html", html_content)
+
+
+def inbox(request):
+    """ Shows the messages the user has recieved from other users. A little communication page. """
+
+    html_content = {"":""}
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html", html_content)
+
+    return render(request, "TeekerApp/inbox.html", html_content)
+
+
+def subscriptions(request):
+    """ Shows the content of the user's the user is following. """
+
+    html_content = {"":""}
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html", html_content)
+
+    return render(request, "TeekerApp/subscriptions.html", html_content)
+
+
+def upload_post(request):
+    """ Used to upload the users content to our database and server. """
+
+    html_content = {"":""}
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html", html_content)
+
+    return render(request, "TeekerApp/upload_post.html", html_content)
+
+
+def visitor_account_view(request):
+    """ Displays the profile of other users in a different way compared to when you own the account. """
+
+    html_content = {"":""}
+
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html", html_content)
+
+    return render(request, "TeekerApp/visitor_account_view.html", html_content)
+
     
