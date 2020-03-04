@@ -17,13 +17,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   
   <title>Settings</title>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=3858532017' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/settings.css?crc=140468062' %}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=378483588' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=53729695' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/settings.css?crc=3907494239' %}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=23281128' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_settings.css?crc=4029178534' %}" id="nomq_pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=4066722438' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_settings.css?crc=343759328' %}" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -149,16 +149,16 @@ width: 100vh !important;
          <div class="clearfix grpelem" id="pbuttonu2953"><!-- group -->
           {% if news_letter %}
           <div class="Button rounded-corners clearfix grpelem" id="buttonu2953" data-visibility="changed" style="visibility:hidden"><!-- container box -->
-            <div class="clearfix grpelem" id="u2954-4"><!-- content -->
-             <p id="u2954-2">ON</p>
-            </div>
+           <div class="clearfix grpelem" id="u2954-4"><!-- content -->
+            <p id="u2954-2">ON</p>
            </div>
+          </div>
           {% else %}
           <div class="Button rounded-corners clearfix grpelem" id="buttonu27518" data-visibility="changed" style="visibility:hidden"><!-- container box -->
-            <div class="clearfix grpelem" id="u27519-4"><!-- content -->
-             <p id="u27519-2">OFF</p>
-            </div>
+           <div class="clearfix grpelem" id="u27519-4"><!-- content -->
+            <p id="u27519-2">OFF</p>
            </div>
+          </div>
           {% endif %}
          </div>
         </div>
@@ -169,15 +169,15 @@ width: 100vh !important;
          <div class="clearfix grpelem" id="pbuttonu3183"><!-- group -->
           {% if browser_notifications %}
           <div class="Button rounded-corners clearfix grpelem" id="buttonu3183" data-visibility="changed" style="visibility:hidden"><!-- container box -->
-            <div class="clearfix grpelem" id="u3184-4"><!-- content -->
-              <p id="u3184-2">ON</p>
-            </div>
+           <div class="clearfix grpelem" id="u3184-4"><!-- content -->
+            <p id="u3184-2">ON</p>
+           </div>
           </div>
           {% else %}
           <div class="Button rounded-corners clearfix grpelem" id="buttonu27482" data-visibility="changed" style="visibility:hidden"><!-- container box -->
-            <div class="clearfix grpelem" id="u27483-4"><!-- content -->
-              <p id="u27483-2">OFF</p>
-            </div>
+           <div class="clearfix grpelem" id="u27483-4"><!-- content -->
+            <p id="u27483-2">OFF</p>
+           </div>
           </div>
           {% endif %}
          </div>
@@ -195,9 +195,9 @@ width: 100vh !important;
           <div class="clearfix grpelem" id="u3193-4"><!-- content -->
             {% if inbox_notifications %}
             <p id="u3193-2">ON</p>
-         {% else %}
+            {% else %}
             <p id="u3193-2">OFF</p>
-         {% endif %}
+            {% endif %}
           </div>
          </div>
         </div>
@@ -207,15 +207,15 @@ width: 100vh !important;
          <div class="position_content" id="widgetu3200_position_content">
           <div class="fld-grp clearfix colelem" id="widgetu3251" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
            <label class="fld-label actAsDiv clearfix colelem" id="u3254-4" for="widgetu3251_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u3254-4_0_content">Old Password:</span></label>
-           <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u3252-4"><!-- content --><div id="u3252-3"><input class="wrapped-input shared_content" type="text" id="widgetu3251_input" name="custom_U3251" tabindex="5" data-content-guid="widgetu3251_input_content"/><label class="wrapped-input fld-prompt" id="widgetu3251_prompt" for="widgetu3251_input"><span class="actAsPara shared_content" data-content-guid="widgetu3251_prompt_0_content">Old Password</span></label></div></span>
+           <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u3252-4"><!-- content --><div id="u3252-3"><input class="wrapped-input shared_content" type="password" id="widgetu3251_input" name="custom_U3251" tabindex="5" data-content-guid="widgetu3251_input_content"/><label class="wrapped-input fld-prompt" id="widgetu3251_prompt" for="widgetu3251_input"><span class="actAsPara shared_content" data-content-guid="widgetu3251_prompt_0_content">Old Password</span></label></div></span>
           </div>
           <div class="fld-grp clearfix colelem" id="widgetu3263" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
            <label class="fld-label actAsDiv clearfix colelem" id="u3265-6" for="widgetu3263_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u3265-6_0_content">New Password:</span><span class="actAsPara shared_content" data-content-guid="u3265-6_1_content">Password must be 8-64 characters long. Uses of .,@#% is recommended to make your password stronger.</span></label>
-           <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u3264-4"><!-- content --><div id="u3264-3"><input class="wrapped-input shared_content" type="text" id="widgetu3263_input" name="custom_U3263" tabindex="6" data-content-guid="widgetu3263_input_content"/><label class="wrapped-input fld-prompt" id="widgetu3263_prompt" for="widgetu3263_input"><span class="actAsPara shared_content" data-content-guid="widgetu3263_prompt_0_content">New Password</span></label></div></span>
+           <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u3264-4"><!-- content --><div id="u3264-3"><input class="wrapped-input shared_content" type="password" id="widgetu3263_input" name="custom_U3263" tabindex="6" data-content-guid="widgetu3263_input_content"/><label class="wrapped-input fld-prompt" id="widgetu3263_prompt" for="widgetu3263_input"><span class="actAsPara shared_content" data-content-guid="widgetu3263_prompt_0_content">New Password</span></label></div></span>
           </div>
           <div class="fld-grp clearfix colelem" id="widgetu3275" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
            <label class="fld-label actAsDiv clearfix colelem" id="u3277-4" for="widgetu3275_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u3277-4_0_content">Confirm Password:</span></label>
-           <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u3278-4"><!-- content --><div id="u3278-3"><input class="wrapped-input shared_content" type="text" id="widgetu3275_input" name="custom_U3275" tabindex="7" data-content-guid="widgetu3275_input_content"/><label class="wrapped-input fld-prompt" id="widgetu3275_prompt" for="widgetu3275_input"><span class="actAsPara shared_content" data-content-guid="widgetu3275_prompt_0_content">Confirm Password</span></label></div></span>
+           <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u3278-4"><!-- content --><div id="u3278-3"><input class="wrapped-input shared_content" type="password" id="widgetu3275_input" name="custom_U3275" tabindex="7" data-content-guid="widgetu3275_input_content"/><label class="wrapped-input fld-prompt" id="widgetu3275_prompt" for="widgetu3275_input"><span class="actAsPara shared_content" data-content-guid="widgetu3275_prompt_0_content">Confirm Password</span></label></div></span>
           </div>
           <div class="clearfix colelem" id="pu3209-4"><!-- group -->
            <div class="clearfix grpelem" id="u3209-4"><!-- content -->
@@ -255,15 +255,11 @@ width: 100vh !important;
      <a class="nonblock nontext clearfix shared_content" id="u291-4" href="feedback" data-content-guid="u291-4_content"><!-- content --><h1>FeedBack</h1></a>
     </div>
     <div class="verticalspacer" data-offset-top="493" data-content-above-spacer="492" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem" id="u2037-bw">
-     <div id="u2037"><!-- group -->
-      <div class="clearfix" id="u2037_align_to_page">
-       <div class="clearfix grpelem shared_content" id="u2043-4" data-content-guid="u2043-4_content"><!-- content -->
-        <p>© 2020, Teeker, All Rights Reserved</p>
-       </div>
-       <a class="nonblock nontext clip_frame grpelem" id="u2046" href="https://www.instagram.com/teekercorporation/" target="_blank"><!-- image --><img class="block temp_no_img_src" id="u2046_img" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26.png?crc=45166549' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7647058823529411" data-image-width="34" data-image-height="26" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
+    <div class="clearfix grpelem" id="u2037"><!-- group -->
+     <div class="clearfix grpelem shared_content" id="u2043-4" data-content-guid="u2043-4_content"><!-- content -->
+      <p>© 2020, Teeker, All Rights Reserved</p>
      </div>
+     <a class="nonblock nontext clip_frame grpelem" id="u2046" href="https://www.instagram.com/teekercorporation/" target="_blank"><!-- image --><img class="block temp_no_img_src" id="u2046_img" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26.png?crc=45166549' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7647058823529411" data-image-width="34" data-image-height="26" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -393,13 +389,9 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <div class="verticalspacer" data-offset-top="507" data-content-above-spacer="506" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23.png?crc=4168757614' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7666666666666667" data-image-width="30" data-image-height="23" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23.png?crc=4168757614' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7666666666666667" data-image-width="30" data-image-height="23" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -535,13 +527,9 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <div class="verticalspacer" data-offset-top="479" data-content-above-spacer="478" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-sizePolicy="fluidWidthHeight" data-pintopage="page_fixedRight" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27.png?crc=3884775056' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.75" data-image-width="36" data-image-height="27" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-sizePolicy="fluidWidthHeight" data-pintopage="page_fixedRight" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27.png?crc=3884775056' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.75" data-image-width="36" data-image-height="27" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -671,13 +659,9 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <div class="verticalspacer" data-offset-top="438" data-content-above-spacer="438" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21.png?crc=224979440' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21_2x.png?crc=4188534961' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7407407407407407" data-image-width="27" data-image-height="20" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21.png?crc=224979440' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21_2x.png?crc=4188534961' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7407407407407407" data-image-width="27" data-image-height="20" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
