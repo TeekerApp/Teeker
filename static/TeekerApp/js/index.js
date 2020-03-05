@@ -1,7 +1,6 @@
 // Javascript for index page
 
 // Used for the loading gif styling to position it in the right place
-var screen_width = (screen.width / 2) / screen.width * 100;
 if (screen.width === 320) {
 	setTimeout(()=>{
 		document.querySelector("#loading_gif_1u").style.width = "20%";
