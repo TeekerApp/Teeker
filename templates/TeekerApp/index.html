@@ -37,7 +37,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <![endif]-->
     
 <!-- Tiny logo icon in tab -->
-	<link href="{% static 'TeekerApp/icon/tk_tab_logo.png' %}" rel="shortcut icon"/>
+  <link href="{% static 'TeekerApp/icon/tk_tab_logo.png' %}" rel="shortcut icon"/>
+    <!-- Index script -->
+    <script src="{% static 'TeekerApp/js/index.js' %}"></script>
+
 <style>
 .mobile_box_black_background {
 min-height: 100vh !important;
@@ -58,7 +61,7 @@ height: 100vh !important;
 </style>
  </head>
  <body>
-
+  <img src="{% static 'TeekerApp/gifs/double_ring.gif' %}" alt="loading Page..." id="loading_gif_1u" style="margin-left: 45%; width: 10%; margin-top: 5%;"/>
   <div class="breakpoint active" id="bp_infinity" data-min-width="1201"><!-- responsive breakpoint node -->
    <div class="clearfix gradient borderbox" id="page"><!-- group -->
     <div class="clearfix grpelem" id="pu97"><!-- group -->
@@ -773,7 +776,7 @@ height: 100vh !important;
      </div>
      {% for alpha in counter %}
      <div class="clearfix colelem" id="u28950"><!-- group -->
-      <div class="mobile_content_box clearfix grpelem" id="u28981"><!-- column -->
+      <div class="mobile_content_box clearfix grpelem" id="u28981" style="margin-bottom: -50%;"><!-- column -->
        <div class="position_content" id="u28981_position_content">
         <div class="clearfix colelem" id="pu28983"><!-- group -->
          <a class="nonblock nontext rounded-corners clip_frame grpelem" id="u28983" href="account"><!-- image --><img class="block temp_no_img_src" id="u28983_img" data-orig-src="/static/TeekerApp/img/{{profile_img}}" data-hidpi-src="/static/TeekerApp/img/{{profile_img}}" alt="" data-heightwidthratio="0.9473684210526315" data-image-width="38" data-image-height="36" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
@@ -815,8 +818,6 @@ height: 100vh !important;
        </div>
       </div>
      </div>
-     <br>
-    <div style="margin-bottom: 135%;"></div>
      {% endfor %}
     </div>
     <div class="verticalspacer" data-offset-top="536" data-content-above-spacer="535" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>

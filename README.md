@@ -11,8 +11,8 @@
 9. - [ ] Recovery Password Page [90% Done]
 	- The page works as intended, but need to build a timer to delete the URL after a set time.
 10. - [ ] FeedBack Page
-11. - [-] Upload Post Page (Running Test... Missing python code to catch uploaded post.)
-12. - [-] Inbox Page (Running Test... Need to first build notification system.)
+11. - [ ] Upload Post Page (Running Test... Missing python code to catch uploaded post.)
+12. - [ ] Inbox Page (Running Test... Need to first build notification system.)
 13. - [x] 403 Page
 14. - [x] 404 Page
 15. - [x] 500 Page
