@@ -60,6 +60,9 @@ def index(request, search=None):
         except account_settings.DoesNotExist:
             f = "profile_img/unavailable_profile_picture.png"
 
+        if not os.path.exists("static/TeekerApp/img/"+str(f)):
+            f = "profile_img/unavailable_profile_picture.png"
+
         html_content = {"message": "G",
                         "title": "My Morning Vibes",
                         "username": "Megan2020",
