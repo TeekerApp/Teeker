@@ -1,7 +1,6 @@
 // Javascript for index page
 
 var screen_width = (screen.width / 2) - 15;
-alert(screen_width);
 // Used for the loading gif styling to position it in the right place
 if (screen.width === 320) {
 	setTimeout(()=>{
@@ -20,6 +19,12 @@ if (screen.width === 320) {
 		document.querySelector("#loading_gif_1u").style.width = "20%";
 		document.querySelector("#loading_gif_1u").style.marginTop = "50%";
 		document.querySelector("#loading_gif_1u").style.marginLeft = screen_width+"px";
+	}, 50);
+} else {
+	setTimeout(()=>{
+		document.querySelector("#loading_gif_1u").style.width = "5%";
+		document.querySelector("#loading_gif_1u").style.marginTop = "5%";
+		document.querySelector("#loading_gif_1u").style.marginLeft = "45%";
 	}, 50);
 }
 
