@@ -56,9 +56,9 @@ def index(request, search=None):
         try:
             f = account_settings.objects.get(owner=int(request.user.pk)).profile_picture
             if not f:
-                f = "images/421-4213053_default-avatar-icon-hd-png-download-crop-u29550_2x.jpg?crc=3789372887"
+                f = "profile_img/unavailable_profile_picture.png"
         except account_settings.DoesNotExist:
-            f = "images/421-4213053_default-avatar-icon-hd-png-download-crop-u29550_2x.jpg?crc=3789372887"
+            f = "profile_img/unavailable_profile_picture.png"
 
         html_content = {"message": "G",
                         "title": "My Morning Vibes",
