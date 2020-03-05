@@ -60,6 +60,8 @@ def index(request, search=None):
         except account_settings.DoesNotExist:
             f = "images/421-4213053_default-avatar-icon-hd-png-download-crop-u29550_2x.jpg?crc=3789372887"
 
+        print(f)
+
         html_content = {"message": "G",
                         "title": "My Morning Vibes",
                         "username": "Megan2020",

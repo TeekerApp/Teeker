@@ -34,7 +34,7 @@ else:
     SECRET_KEY = 'egEfu,zCifp83GiK_PJ2II6iu}]h5gRZI1[P,sOi|InZI~{z84(W;bU,1j8"&$@tw?!C#uB\'763K?1|Hfkq4-_,3$:.XVj@")h779abB(1uI'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["https://teeker.co"]
 
