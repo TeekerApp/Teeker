@@ -1,24 +1,24 @@
 // Javascript for index page
 
-var screen_width = (screen.width / 2) - 15;
 // Used for the loading gif styling to position it in the right place
+var screen_width = (screen.width / 2) / screen.width * 100;
 if (screen.width === 320) {
 	setTimeout(()=>{
 		document.querySelector("#loading_gif_1u").style.width = "20%";
 		document.querySelector("#loading_gif_1u").style.marginTop = "50%";
-		document.querySelector("#loading_gif_1u").style.marginLeft = screen_width+"px";
+		document.querySelector("#loading_gif_1u").style.marginLeft = "40%";
 	}, 50);
 } else if (screen.width > 320 && screen.width <= 380) {
 	setTimeout(()=>{
 		document.querySelector("#loading_gif_1u").style.width = "20%";
 		document.querySelector("#loading_gif_1u").style.marginTop = "50%";
-		document.querySelector("#loading_gif_1u").style.marginLeft = screen_width+"px";
+		document.querySelector("#loading_gif_1u").style.marginLeft = "40%";
 	}, 50);
 } else if (screen.width > 380 && screen.width <= 480) {
 	setTimeout(()=>{
 		document.querySelector("#loading_gif_1u").style.width = "20%";
 		document.querySelector("#loading_gif_1u").style.marginTop = "50%";
-		document.querySelector("#loading_gif_1u").style.marginLeft = screen_width+"px";
+		document.querySelector("#loading_gif_1u").style.marginLeft = "40%";
 	}, 50);
 } else {
 	setTimeout(()=>{
