@@ -20,31 +20,58 @@ recovery_email_url = {}
 recovery_urls = []
 
 # Create your views here.
+def handler403(request, *args, **argv):
+    return render(request, "TeekerApp/403.html", status=403)
+
+def handler404(request, *args, **argv):
+    return render(request, "TeekerApp/404.html", status=404)
+
+def handler500(request, *args, **argv):
+    return render(request, "TeekerApp/500.html", status=500)
+
 
 def index(request, search=None):
     """Used for Home page"""
 
-    if not search:
-        search="oyrq-qzOx1U" # If no searches have been made use this as default
+    # Check if the user is Staff (Only Staff are allowed to view this page)
+    if not request.user.is_staff:
+        return render(request, "TeekerApp/not_staff.html")
 
-    url = f'https://www.googleapis.com/youtube/v3/videos?id={search}&key={settings.GOOGLE_API}&part=status'
-    url_get = requests.get(url)
-    try:
-        if url_get.json()["items"][0]["status"]["publicStatsViewable"]:
-            print("Video is publicly available")
-    except:
-        search="oyrq-qzOx1U"
-        print("Video does not exist.")
+    if request.method == "GET":
+        if not search:
+            search="oyrq-qzOx1U" # If no searches have been made use this as default
 
-    html_content = {"message": "G",
-                    "title": "My Morning Vibes",
-                    "average_rating": 8,
-                    "youtube_easteregg": search}
+        try:
+            url = f'https://www.googleapis.com/youtube/v3/videos?id={search}&key={settings.GOOGLE_API}&part=status'
+            url_get = requests.get(url)
+            if url_get.json()["items"][0]["status"]["publicStatsViewable"]:
+                print("Video is publicly available")
+            else:
+                print("Video not publicly available")
+                search="oyrq-qzOx1U" # If no searches have been made use this as default
+        except:
+            search="oyrq-qzOx1U"
+            print("Video does not exist.")
+        
+        try:
+            f = account_settings.objects.get(owner=int(request.user.pk)).profile_picture
+            if not f:
+                f = "images/421-4213053_default-avatar-icon-hd-png-download-crop-u29550_2x.jpg?crc=3789372887"
+        except account_settings.DoesNotExist:
+            f = "images/421-4213053_default-avatar-icon-hd-png-download-crop-u29550_2x.jpg?crc=3789372887"
 
-    if request.user.is_staff:
+        print(f)
+
+        html_content = {"message": "G",
+                        "title": "My Morning Vibes",
+                        "username": "Megan2020",
+                        "description": "The air smells like flowers and the sun shines like gold.",
+                        "average_rating": 8,
+                        "youtube_easteregg": search,
+                        "counter": ["1", "2", "3"],
+                        "profile_img": f}
+
         return render(request, "TeekerApp/index.html", html_content)
-    else:
-        return render(request, "TeekerApp/not_staff.html", html_content)
 
 
 def search_bar(request): # For now this is just used as a Alpha Easter Egg

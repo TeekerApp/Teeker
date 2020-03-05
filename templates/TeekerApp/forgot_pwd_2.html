@@ -16,14 +16,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 </script>
   
   <title>Reseting Password</title>
+
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=3858532017' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/forgot_pwd_2.css?crc=352803516' %}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=378483588' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=53729695' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/forgot_pwd_2.css?crc=4034247510' %}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=23281128' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_forgot_pwd_2.css?crc=3908055899' %}" id="nomq_pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=4066722438' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_forgot_pwd_2.css?crc=125684287' %}" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -38,14 +39,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script type="text/javascript">
    var muReCAPTCHA2Instances = {};
 var muReCAPTCHA2OnloadCallback = function() {
-	muReCAPTCHA2Instances['widgetu1300'] = grecaptcha.render('widgetu1300_recaptcha2', {"type":"image","size":"normal","sitekey":"6LeMoM4UAAAAAN_n6ogSvSt4j1NAKpwlIvdKvn_5","theme":"dark"});
+	muReCAPTCHA2Instances['widgetu1300'] = grecaptcha.render('widgetu1300_recaptcha2', {"type":"image","sitekey":"6LeMoM4UAAAAAN_n6ogSvSt4j1NAKpwlIvdKvn_5","theme":"dark","size":"normal"});
 };
 </script>
     
-<!-- Tiny logo icon in tab -->
+  <!-- Tiny logo icon in tab -->
   <link href="{% static 'TeekerApp/icon/tk_tab_logo.png' %}" rel="shortcut icon"/>
-<!-- My own Forgot Password 2 Script -->
-<script type="text/javascript" src="{% static 'TeekerApp/js/forgot_pwd.js' %}"></script>
+  <!-- My own Forgot Password 2 Script -->
+  <script type="text/javascript" src="{% static 'TeekerApp/js/forgot_pwd.js' %}"></script>
+
 <style>
 .mobile_box_black_background {
 min-height: 100vh !important;
@@ -61,12 +63,12 @@ width: 100vh !important;
    <div class="clearfix gradient borderbox" id="page"><!-- group -->
     <form class="form-grp clearfix grpelem" id="widgetu1298" method="post" enctype="multipart/form-data" action="{{url}}/c" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter"><!-- none box -->
      <div class="position_content" id="widgetu1298_position_content">
-      <div class="fld-grp clearfix colelem" id="widgetu1304" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix colelem" id="u1307-4" for="widgetu1304_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u1307-4_0_content">Password must be 8-64 characters long. Uses of .,@#% is recommended to make your password stronger.</span></label>
-       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem" id="u1306-4"><!-- content --><div id="u1306-3"><input type="password" class="wrapped-input shared_content" id="widgetu1304_input" name="pwd" tabindex="1" data-content-guid="widgetu1304_input_content"></input><label class="wrapped-input fld-prompt" id="widgetu1304_prompt" for="widgetu1304_input"><span class="actAsPara shared_content" data-content-guid="widgetu1304_prompt_0_content">Password</span></label></div></span>
+      <div class="fld-grp clearfix colelem" id="widgetu27642" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix colelem" id="u27644-4" for="widgetu27642_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u27644-4_0_content">Password must be 8-64 characters long. Uses of .,@#% is recommended to make your password stronger.</span></label>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u27645-4"><!-- content --><div id="u27645-3"><input class="wrapped-input shared_content" type="password" id="widgetu27642_input" name="pwd" tabindex="1" data-content-guid="widgetu27642_input_content"/><label class="wrapped-input fld-prompt" id="widgetu27642_prompt" for="widgetu27642_input"><span class="actAsPara shared_content" data-content-guid="widgetu27642_prompt_0_content">Password</span></label></div></span>
       </div>
-      <div class="fld-grp clearfix colelem" id="widgetu1329" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
-       <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem" id="u1330-4"><!-- content --><div id="u1330-3"><input type="password" class="wrapped-input shared_content" id="widgetu1329_input" name="cpwd" tabindex="2" data-content-guid="widgetu1329_input_content"></input><label class="wrapped-input fld-prompt" id="widgetu1329_prompt" for="widgetu1329_input"><span class="actAsPara shared_content" data-content-guid="widgetu1329_prompt_0_content">Confirm Password</span></label></div></span>
+      <div class="fld-grp clearfix colelem" id="widgetu27708" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem" id="u27709-4"><!-- content --><div id="u27709-3"><input class="wrapped-input shared_content" type="password" id="widgetu27708_input" name="cpwd" tabindex="2" data-content-guid="widgetu27708_input_content"/><label class="wrapped-input fld-prompt" id="widgetu27708_prompt" for="widgetu27708_input"><span class="actAsPara shared_content" data-content-guid="widgetu27708_prompt_0_content">Confirm Password</span></label></div></span>
       </div>
       <div class="clearfix colelem" id="pu1337-4"><!-- group -->
        <div class="clearfix grpelem" id="u1337-4"><!-- content -->
@@ -95,16 +97,12 @@ width: 100vh !important;
      <a class="nonblock nontext clip_frame" id="u97" href="\"><!-- image --><img class="block temp_no_img_src" id="u97_img" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo.png?crc=472355463' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo_2x.png?crc=467144595' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="60" data-image-height="60" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
      <a class="nonblock nontext clearfix shared_content" id="u291-4" href="feedback" data-content-guid="u291-4_content"><!-- content --><h1>FeedBack</h1></a>
     </div>
-    <div class="verticalspacer" data-offset-top="344" data-content-above-spacer="438" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem" id="u2037-bw">
-     <div id="u2037"><!-- group -->
-      <div class="clearfix" id="u2037_align_to_page">
-       <div class="clearfix grpelem shared_content" id="u2043-4" data-content-guid="u2043-4_content"><!-- content -->
-        <p>© 2020, Teeker, All Rights Reserved</p>
-       </div>
-       <a class="nonblock nontext clip_frame grpelem" id="u2046" href="https://www.instagram.com/teekercorporation/" target="_blank"><!-- image --><img class="block temp_no_img_src" id="u2046_img" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26.png?crc=45166549' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7647058823529411" data-image-width="34" data-image-height="26" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
+    <div class="verticalspacer" data-offset-top="348" data-content-above-spacer="438" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+    <div class="clearfix grpelem" id="u2037"><!-- group -->
+     <div class="clearfix grpelem shared_content" id="u2043-4" data-content-guid="u2043-4_content"><!-- content -->
+      <p>© 2020, Teeker, All Rights Reserved</p>
      </div>
+     <a class="nonblock nontext clip_frame grpelem" id="u2046" href="https://www.instagram.com/teekercorporation/" target="_blank"><!-- image --><img class="block temp_no_img_src" id="u2046_img" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26.png?crc=45166549' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7647058823529411" data-image-width="34" data-image-height="26" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -112,12 +110,15 @@ width: 100vh !important;
    <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
     <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="{{url}}/c" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-orig-id="widgetu1298"><!-- none box -->
      <div class="position_content temp_no_id" data-orig-id="widgetu1298_position_content">
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1304"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu1304_input" data-orig-id="u1307-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u1307-4_0_content"><!-- placeholder node --></span></label>
-       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u1306-4"><!-- content --><div class="temp_no_id" data-orig-id="u1306-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1304_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1304_input" data-orig-id="widgetu1304_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1304_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27642"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu27642_input" data-orig-id="u27644-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u27644-4_0_content"><!-- placeholder node --></span></label>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u27645-4"><!-- content --><div class="temp_no_id" data-orig-id="u27645-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27642_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27642_input" data-orig-id="widgetu27642_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27642_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1329"><!-- none box -->
-       <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u1330-4"><!-- content --><div class="temp_no_id" data-orig-id="u1330-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1329_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1329_input" data-orig-id="widgetu1329_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1329_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27708"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u27709-4"><!-- content --><div class="temp_no_id" data-orig-id="u27709-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27708_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27708_input" data-orig-id="widgetu27708_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27708_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      </div>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-type="recaptcha2" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1300"><!-- none box -->
+       <span class="grpelem placeholder" data-placeholder-for="widgetu1300_recaptcha2_content"><!-- placeholder node --></span>
       </div>
       <div class="clearfix colelem temp_no_id" data-orig-id="pu1337-4"><!-- group -->
        <div class="clearfix grpelem temp_no_id" data-orig-id="u1337-4"><!-- content -->
@@ -129,13 +130,10 @@ width: 100vh !important;
        <div class="clearfix grpelem temp_no_id" data-orig-id="u1316-4"><!-- content -->
         <span class="placeholder" data-placeholder-for="u1316-4_0_content"><!-- placeholder node --></span>
        </div>
-       <div class="fld-grp clearfix grpelem temp_no_id" data-required="true" data-type="recaptcha2" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1300"><!-- none box -->
-        <span class="grpelem placeholder" data-placeholder-for="widgetu1300_recaptcha2_content"><!-- placeholder node --></span>
-       </div>
+       <button class="submit-btn NoWrap transition rounded-corners clearfix grpelem temp_no_id" type="submit" value="Update Password" tabindex="8" data-orig-id="u1299-4"><!-- content -->
+        <span class="placeholder" data-placeholder-for="u1299-4_0_content"><!-- placeholder node --></span>
+       </button>
       </div>
-      <button class="submit-btn NoWrap transition rounded-corners clearfix colelem temp_no_id" type="submit" value="Update Password" tabindex="8" data-orig-id="u1299-4"><!-- content -->
-       <span class="placeholder" data-placeholder-for="u1299-4_0_content"><!-- placeholder node --></span>
-      </button>
      </div>
     <input value="{{url}}" name="ust_url" style="display: none;"/>
      {% csrf_token %}
@@ -144,14 +142,10 @@ width: 100vh !important;
      <a class="nonblock nontext clip_frame temp_no_id" href="\" data-orig-id="u97"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/tk_tab_logo38x38.png?crc=4190248241' %}" data-hidpi-src="{% static 'TeekerApp/images/tk_tab_logo38x38_2x.png?crc=495093929' %}" alt="" title="Home" data-heightwidthratio="1" data-image-width="38" data-image-height="38" data-orig-id="u97_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
-    <div class="verticalspacer" data-offset-top="366" data-content-above-spacer="438" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23.png?crc=4168757614' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7666666666666667" data-image-width="30" data-image-height="23" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="verticalspacer" data-offset-top="385" data-content-above-spacer="438" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23.png?crc=4168757614' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7666666666666667" data-image-width="30" data-image-height="23" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -159,12 +153,12 @@ width: 100vh !important;
    <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
     <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="{{url}}/c" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-orig-id="widgetu1298"><!-- none box -->
      <div class="position_content temp_no_id" data-orig-id="widgetu1298_position_content">
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1304"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu1304_input" data-orig-id="u1307-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u1307-4_0_content"><!-- placeholder node --></span></label>
-       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u1306-4"><!-- content --><div class="temp_no_id" data-orig-id="u1306-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1304_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1304_input" data-orig-id="widgetu1304_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1304_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27642"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu27642_input" data-orig-id="u27644-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u27644-4_0_content"><!-- placeholder node --></span></label>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u27645-4"><!-- content --><div class="temp_no_id" data-orig-id="u27645-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27642_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27642_input" data-orig-id="widgetu27642_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27642_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1329"><!-- none box -->
-       <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u1330-4"><!-- content --><div class="temp_no_id" data-orig-id="u1330-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1329_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1329_input" data-orig-id="widgetu1329_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1329_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27708"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u27709-4"><!-- content --><div class="temp_no_id" data-orig-id="u27709-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27708_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27708_input" data-orig-id="widgetu27708_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27708_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
       <div class="clearfix colelem temp_no_id" data-orig-id="pu1337-4"><!-- group -->
        <div class="clearfix grpelem temp_no_id" data-orig-id="u1337-4"><!-- content -->
@@ -192,43 +186,37 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <div class="verticalspacer" data-offset-top="351" data-content-above-spacer="438" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-sizePolicy="fluidWidthHeight" data-pintopage="page_fixedRight" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27.png?crc=3884775056' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.75" data-image-width="36" data-image-height="27" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-sizePolicy="fluidWidthHeight" data-pintopage="page_fixedRight" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27.png?crc=3884775056' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.75" data-image-width="36" data-image-height="27" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
   <div class="breakpoint" id="bp_768" data-min-width="481" data-max-width="768"><!-- responsive breakpoint node -->
    <div class="clearfix gradient borderbox temp_no_id" data-orig-id="page"><!-- group -->
     <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="{{url}}/c" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-orig-id="widgetu1298"><!-- none box -->
-     <div class="position_content temp_no_id" data-orig-id="widgetu1298_position_content">
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1304"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu1304_input" data-orig-id="u1307-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u1307-4_0_content"><!-- placeholder node --></span></label>
-       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u1306-4"><!-- content --><div class="temp_no_id" data-orig-id="u1306-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1304_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1304_input" data-orig-id="widgetu1304_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1304_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+     <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27642"><!-- none box -->
+      <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu27642_input" data-orig-id="u27644-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u27644-4_0_content"><!-- placeholder node --></span></label>
+      <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u27645-4"><!-- content --><div class="temp_no_id" data-orig-id="u27645-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27642_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27642_input" data-orig-id="widgetu27642_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27642_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+     </div>
+     <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27708"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u27709-4"><!-- content --><div class="temp_no_id" data-orig-id="u27709-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27708_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27708_input" data-orig-id="widgetu27708_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27708_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+     </div>
+     <div class="clearfix colelem temp_no_id" data-orig-id="pu1337-4"><!-- group -->
+      <div class="clearfix grpelem temp_no_id" data-orig-id="u1337-4"><!-- content -->
+       <span class="placeholder" data-placeholder-for="u1337-4_0_content"><!-- placeholder node --></span>
       </div>
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1329"><!-- none box -->
-       <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u1330-4"><!-- content --><div class="temp_no_id" data-orig-id="u1330-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1329_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1329_input" data-orig-id="widgetu1329_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1329_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="clearfix grpelem temp_no_id" data-orig-id="u1338-4"><!-- content -->
+       <span class="placeholder" data-placeholder-for="u1338-4_0_content"><!-- placeholder node --></span>
       </div>
-      <div class="clearfix colelem temp_no_id" data-orig-id="pu1337-4"><!-- group -->
-       <div class="clearfix grpelem temp_no_id" data-orig-id="u1337-4"><!-- content -->
-        <span class="placeholder" data-placeholder-for="u1337-4_0_content"><!-- placeholder node --></span>
-       </div>
-       <div class="clearfix grpelem temp_no_id" data-orig-id="u1338-4"><!-- content -->
-        <span class="placeholder" data-placeholder-for="u1338-4_0_content"><!-- placeholder node --></span>
-       </div>
-       <div class="clearfix grpelem temp_no_id" data-orig-id="u1316-4"><!-- content -->
-        <span class="placeholder" data-placeholder-for="u1316-4_0_content"><!-- placeholder node --></span>
-       </div>
-       <button class="submit-btn NoWrap transition rounded-corners clearfix grpelem temp_no_id" type="submit" value="Update Password" tabindex="16" data-orig-id="u1299-4"><!-- content -->
-        <span class="placeholder" data-placeholder-for="u1299-4_0_content"><!-- placeholder node --></span>
-       </button>
-       <div class="fld-grp clearfix grpelem temp_no_id" data-required="true" data-type="recaptcha2" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1300"><!-- none box -->
-        <span class="grpelem placeholder" data-placeholder-for="widgetu1300_recaptcha2_content"><!-- placeholder node --></span>
-       </div>
+      <div class="clearfix grpelem temp_no_id" data-orig-id="u1316-4"><!-- content -->
+       <span class="placeholder" data-placeholder-for="u1316-4_0_content"><!-- placeholder node --></span>
+      </div>
+      <button class="submit-btn NoWrap transition rounded-corners clearfix grpelem temp_no_id" type="submit" value="Update Password" tabindex="16" data-orig-id="u1299-4"><!-- content -->
+       <span class="placeholder" data-placeholder-for="u1299-4_0_content"><!-- placeholder node --></span>
+      </button>
+      <div class="fld-grp clearfix grpelem temp_no_id" data-required="true" data-type="recaptcha2" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1300"><!-- none box -->
+       <span class="grpelem placeholder" data-placeholder-for="widgetu1300_recaptcha2_content"><!-- placeholder node --></span>
       </div>
      </div>
     <input value="{{url}}" name="ust_url" style="display: none;"/>
@@ -239,13 +227,9 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <div class="verticalspacer" data-offset-top="373" data-content-above-spacer="438" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21.png?crc=224979440' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21_2x.png?crc=4188534961' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7407407407407407" data-image-width="27" data-image-height="20" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21.png?crc=224979440' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21_2x.png?crc=4188534961' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7407407407407407" data-image-width="27" data-image-height="20" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -260,12 +244,12 @@ width: 100vh !important;
     </div>
     <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="{{url}}/c" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-orig-id="widgetu1298"><!-- none box -->
      <div class="position_content temp_no_id" data-orig-id="widgetu1298_position_content">
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1304"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu1304_input" data-orig-id="u1307-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u1307-4_0_content"><!-- placeholder node --></span></label>
-       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u1306-4"><!-- content --><div class="temp_no_id" data-orig-id="u1306-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1304_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1304_input" data-orig-id="widgetu1304_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1304_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27642"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu27642_input" data-orig-id="u27644-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u27644-4_0_content"><!-- placeholder node --></span></label>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u27645-4"><!-- content --><div class="temp_no_id" data-orig-id="u27645-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27642_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27642_input" data-orig-id="widgetu27642_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27642_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1329"><!-- none box -->
-       <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u1330-4"><!-- content --><div class="temp_no_id" data-orig-id="u1330-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1329_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1329_input" data-orig-id="widgetu1329_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1329_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27708"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u27709-4"><!-- content --><div class="temp_no_id" data-orig-id="u27709-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27708_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27708_input" data-orig-id="widgetu27708_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27708_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
       <div class="clearfix colelem temp_no_id" data-orig-id="pu1337-4"><!-- group -->
        <div class="clearfix grpelem temp_no_id" data-orig-id="u1337-4"><!-- content -->
@@ -300,12 +284,12 @@ width: 100vh !important;
     </div>
     <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="{{url}}/c" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-orig-id="widgetu1298"><!-- none box -->
      <div class="position_content temp_no_id" data-orig-id="widgetu1298_position_content">
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1304"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu1304_input" data-orig-id="u1307-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u1307-4_0_content"><!-- placeholder node --></span></label>
-       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u1306-4"><!-- content --><div class="temp_no_id" data-orig-id="u1306-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1304_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1304_input" data-orig-id="widgetu1304_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1304_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27642"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu27642_input" data-orig-id="u27644-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u27644-4_0_content"><!-- placeholder node --></span></label>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u27645-4"><!-- content --><div class="temp_no_id" data-orig-id="u27645-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27642_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27642_input" data-orig-id="widgetu27642_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27642_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1329"><!-- none box -->
-       <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u1330-4"><!-- content --><div class="temp_no_id" data-orig-id="u1330-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1329_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1329_input" data-orig-id="widgetu1329_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1329_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27708"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u27709-4"><!-- content --><div class="temp_no_id" data-orig-id="u27709-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27708_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27708_input" data-orig-id="widgetu27708_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27708_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
       <div class="clearfix colelem temp_no_id" data-orig-id="pu1337-4"><!-- group -->
        <div class="clearfix grpelem temp_no_id" data-orig-id="u1337-4"><!-- content -->
@@ -340,12 +324,15 @@ width: 100vh !important;
     </div>
     <form class="form-grp clearfix grpelem temp_no_id" method="post" enctype="multipart/form-data" action="{{url}}/c" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter" data-orig-id="widgetu1298"><!-- none box -->
      <div class="position_content temp_no_id" data-orig-id="widgetu1298_position_content">
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1304"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu1304_input" data-orig-id="u1307-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u1307-4_0_content"><!-- placeholder node --></span></label>
-       <span class="fld-textarea actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u1306-4"><!-- content --><div class="temp_no_id" data-orig-id="u1306-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1304_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1304_input" data-orig-id="widgetu1304_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1304_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27642"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix colelem temp_no_id" for="widgetu27642_input" data-orig-id="u27644-4"><!-- content --><span class="actAsPara placeholder" data-placeholder-for="u27644-4_0_content"><!-- placeholder node --></span></label>
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem temp_no_id" data-orig-id="u27645-4"><!-- content --><div class="temp_no_id" data-orig-id="u27645-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27642_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27642_input" data-orig-id="widgetu27642_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27642_prompt_0_content"><!-- placeholder node --></span></label></div></span>
       </div>
-      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1329"><!-- none box -->
-       <span class="fld-textarea actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u1330-4"><!-- content --><div class="temp_no_id" data-orig-id="u1330-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu1329_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu1329_input" data-orig-id="widgetu1329_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu1329_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu27708"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rounded-corners clearfix grpelem temp_no_id" data-orig-id="u27709-4"><!-- content --><div class="temp_no_id" data-orig-id="u27709-3"><span class="wrapped-input placeholder" data-placeholder-for="widgetu27708_input_content"><!-- placeholder node --></span><label class="wrapped-input fld-prompt temp_no_id" for="widgetu27708_input" data-orig-id="widgetu27708_prompt"><span class="actAsPara placeholder" data-placeholder-for="widgetu27708_prompt_0_content"><!-- placeholder node --></span></label></div></span>
+      </div>
+      <div class="fld-grp clearfix colelem temp_no_id" data-required="true" data-type="recaptcha2" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1300"><!-- none box -->
+       <span class="grpelem placeholder" data-placeholder-for="widgetu1300_recaptcha2_content"><!-- placeholder node --></span>
       </div>
       <div class="clearfix colelem temp_no_id" data-orig-id="pu1337-4"><!-- group -->
        <div class="clearfix grpelem temp_no_id" data-orig-id="u1337-4"><!-- content -->
@@ -357,9 +344,6 @@ width: 100vh !important;
        <div class="clearfix grpelem temp_no_id" data-orig-id="u1316-4"><!-- content -->
         <span class="placeholder" data-placeholder-for="u1316-4_0_content"><!-- placeholder node --></span>
        </div>
-       <div class="fld-grp clearfix grpelem temp_no_id" data-required="true" data-type="recaptcha2" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx" data-orig-id="widgetu1300"><!-- none box -->
-        <span class="grpelem placeholder" data-placeholder-for="widgetu1300_recaptcha2_content"><!-- placeholder node --></span>
-       </div>
       </div>
       <button class="submit-btn NoWrap transition rounded-corners clearfix colelem temp_no_id" type="submit" value="Update Password" tabindex="28" data-orig-id="u1299-4"><!-- content -->
        <span class="placeholder" data-placeholder-for="u1299-4_0_content"><!-- placeholder node --></span>
@@ -368,7 +352,7 @@ width: 100vh !important;
     <input value="{{url}}" name="ust_url" style="display: none;"/>
      {% csrf_token %}
     </form>
-    <div class="verticalspacer" data-offset-top="337" data-content-above-spacer="438" data-content-below-spacer="100" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+    <div class="verticalspacer" data-offset-top="355" data-content-above-spacer="438" data-content-below-spacer="83" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
    </div>
   </div>
   <!-- JS includes -->
@@ -391,8 +375,6 @@ window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.detectScreenResolution();/* HiDPI screens */
 Muse.Utils.prepHyperlinks(true);/* body */
-Muse.Utils.resizeHeight('.browser_width');/* resize height */
-Muse.Utils.requestAnimationFrame(function() { $('body').addClass('initialized'); });/* mark body as initialized */
 Muse.Utils.makeButtonsVisibleAfterSettingMinWidth();/* body */
 Muse.Utils.initWidget('#widgetu1298', ['#bp_infinity', '#bp_1200', '#bp_992', '#bp_768', '#bp_480', '#bp_380', '#bp_320'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:false}); });/* #widgetu1298 */
 Muse.Utils.fullPage('#page');/* 100% height page */

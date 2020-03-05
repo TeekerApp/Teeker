@@ -17,13 +17,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   
   <title>Forgot Password</title>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=444006867' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=3858532017' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/forgot_pwd.css?crc=4083751058' %}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/site_global.css?crc=378483588' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/master_a-master.css?crc=53729695' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/forgot_pwd.css?crc=4055339402' %}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=23281128' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_forgot_pwd.css?crc=3879504251' %}" id="nomq_pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_preview_master_a-master.css?crc=4066722438' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'TeekerApp/css/nomq_forgot_pwd.css?crc=3909130884' %}" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -53,9 +53,7 @@ width: 100vh !important;
     <form class="form-grp clearfix grpelem" id="widgetu1238" method="post" enctype="multipart/form-data" action="forgot_pwd" data-sizePolicy="fluidWidth" data-pintopage="page_fixedCenter"><!-- none box -->
      <div class="position_content" id="widgetu1238_position_content">
       <div class="fld-grp clearfix colelem" id="widgetu1247" data-required="true" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx"><!-- none box -->
-        <p style="font-size: small; color: rgb(164, 0, 0);">{{message}}</p>
-        <p style="font-size: small; color: rgb(35, 211, 0);">{{success_message}}</p>
-        <label class="fld-label actAsDiv clearfix colelem" id="u1249-4" for="widgetu1247_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u1249-4_0_content">Please place your email address here.</span></label>
+       <label class="fld-label actAsDiv clearfix colelem" id="u1249-4" for="widgetu1247_input"><!-- content --><span class="actAsPara shared_content" data-content-guid="u1249-4_0_content">Please place your email address here. <p style="font-size: small; color: rgb(164, 0, 0);">{{message}}</p><p style="font-size: small; color: rgb(35, 211, 0);">{{success_message}}</p></span></label>
        <span class="fld-input NoWrap actAsDiv rounded-corners clearfix colelem" id="u1250-4"><!-- content --><div id="u1250-3"><input class="wrapped-input shared_content" type="email" spellcheck="false" id="widgetu1247_input" name="email" tabindex="1" data-content-guid="widgetu1247_input_content"/><label class="wrapped-input fld-prompt" id="widgetu1247_prompt" for="widgetu1247_input"><span class="actAsPara shared_content" data-content-guid="widgetu1247_prompt_0_content">E-mail address</span></label></div></span>
       </div>
       <button class="submit-btn NoWrap transition rounded-corners clearfix colelem" id="u1241-4" type="submit" value="Reset" tabindex="2"><!-- content -->
@@ -82,15 +80,11 @@ width: 100vh !important;
      <a class="nonblock nontext clearfix shared_content" id="u291-4" href="feedback" data-content-guid="u291-4_content"><!-- content --><h1>FeedBack</h1></a>
     </div>
     <div class="verticalspacer shared_content" data-offset-top="310" data-content-above-spacer="438" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft" data-content-guid="page_2_content"></div>
-    <div class="browser_width grpelem" id="u2037-bw">
-     <div id="u2037"><!-- group -->
-      <div class="clearfix" id="u2037_align_to_page">
-       <div class="clearfix grpelem shared_content" id="u2043-4" data-content-guid="u2043-4_content"><!-- content -->
-        <p>© 2020, Teeker, All Rights Reserved</p>
-       </div>
-       <a class="nonblock nontext clip_frame grpelem" id="u2046" href="https://www.instagram.com/teekercorporation/" target="_blank"><!-- image --><img class="block temp_no_img_src" id="u2046_img" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26.png?crc=45166549' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7647058823529411" data-image-width="34" data-image-height="26" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
+    <div class="clearfix grpelem" id="u2037"><!-- group -->
+     <div class="clearfix grpelem shared_content" id="u2043-4" data-content-guid="u2043-4_content"><!-- content -->
+      <p>© 2020, Teeker, All Rights Reserved</p>
      </div>
+     <a class="nonblock nontext clip_frame grpelem" id="u2046" href="https://www.instagram.com/teekercorporation/" target="_blank"><!-- image --><img class="block temp_no_img_src" id="u2046_img" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26.png?crc=45166549' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e34x26_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7647058823529411" data-image-width="34" data-image-height="26" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -124,13 +118,9 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <div class="verticalspacer" data-offset-top="337" data-content-above-spacer="438" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23.png?crc=4168757614' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7666666666666667" data-image-width="30" data-image-height="23" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23.png?crc=4168757614' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e31x23_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7666666666666667" data-image-width="30" data-image-height="23" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -164,13 +154,9 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <span class="verticalspacer placeholder" data-placeholder-for="page_2_content"><!-- placeholder node --></span>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-sizePolicy="fluidWidthHeight" data-pintopage="page_fixedRight" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27.png?crc=3884775056' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.75" data-image-width="36" data-image-height="27" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-sizePolicy="fluidWidthHeight" data-pintopage="page_fixedRight" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27.png?crc=3884775056' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e36x27_2x.png?crc=4112693881' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.75" data-image-width="36" data-image-height="27" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -204,13 +190,9 @@ width: 100vh !important;
      <span class="nonblock nontext clearfix placeholder" data-placeholder-for="u291-4_content"><!-- placeholder node --></span>
     </div>
     <div class="verticalspacer" data-offset-top="315" data-content-above-spacer="438" data-content-below-spacer="62" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-    <div class="browser_width grpelem temp_no_id" data-orig-id="u2037-bw">
-     <div class="temp_no_id" data-orig-id="u2037"><!-- group -->
-      <div class="clearfix temp_no_id" data-orig-id="u2037_align_to_page">
-       <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
-       <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21.png?crc=224979440' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21_2x.png?crc=4188534961' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7407407407407407" data-image-width="27" data-image-height="20" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
-      </div>
-     </div>
+    <div class="clearfix grpelem temp_no_id" data-orig-id="u2037"><!-- group -->
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u2043-4_content"><!-- placeholder node --></span>
+     <a class="nonblock nontext clip_frame grpelem temp_no_id" href="https://www.instagram.com/teekercorporation/" target="_blank" data-orig-id="u2046"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21.png?crc=224979440' %}" data-hidpi-src="{% static 'TeekerApp/images/8a770507298d728a1e3e039a0507dd8e28x21_2x.png?crc=4188534961' %}" alt="" title="Teeker Instagram" data-heightwidthratio="0.7407407407407407" data-image-width="27" data-image-height="20" data-orig-id="u2046_img" src="{% static 'TeekerApp/images/blank.gif?crc=4208392903' %}"/></a>
     </div>
    </div>
   </div>
@@ -331,8 +313,6 @@ window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.detectScreenResolution();/* HiDPI screens */
 Muse.Utils.prepHyperlinks(true);/* body */
-Muse.Utils.resizeHeight('.browser_width');/* resize height */
-Muse.Utils.requestAnimationFrame(function() { $('body').addClass('initialized'); });/* mark body as initialized */
 Muse.Utils.makeButtonsVisibleAfterSettingMinWidth();/* body */
 Muse.Utils.initWidget('#widgetu1238', ['#bp_infinity', '#bp_1200', '#bp_992', '#bp_768', '#bp_480', '#bp_380', '#bp_320'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:false}); });/* #widgetu1238 */
 Muse.Utils.fullPage('#page');/* 100% height page */

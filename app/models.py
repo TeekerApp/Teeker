@@ -25,6 +25,10 @@ class account_settings(models.Model):
 	inbox_notifications = models.BooleanField(default=True, null=False)
 	browser_notifications = models.BooleanField(default=True, null=False)
 	search_collections = models.BooleanField(default=True, null=False)
+	profile_picture = models.ImageField(upload_to="profile_img/", help_text="Profile Picture", null=True)
+
+	def __str__(self):
+		return f"Owner: {self.owner} News Letter: {self.news_letter} Inbox Notifications: {self.inbox_notifications} Browser Notifications: {self.browser_notifications} Search Collection: {self.search_collections} Profile Picture: {self.profile_picture}"
 
 class feedback_content(models.Model):
 	""" This is for storing FeedBack data. """
@@ -35,3 +39,4 @@ class feedback_content(models.Model):
 
 	def __str__(self):
 		return f"Owner: {self.owner} Subject: {self.subject} Feedback Message: {self.feedback} Date: {self.date}"
+		
