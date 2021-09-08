@@ -19,7 +19,7 @@ lib50==1.1.10
 MarkupSafe==1.1.1
 mccabe==0.6.1
 pexpect==4.7.0
-Pillow==6.2.1
+Pillow==8.3.2
 ptyprocess==0.6.0
 pycparser==2.19
 pylint==2.3.1
